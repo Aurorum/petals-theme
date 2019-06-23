@@ -1016,9 +1016,9 @@ a.panel-button:visited {
 
 .widget-area {
 	float: right;
-	margin-top: 30px;
-	margin-right: 2px;
-	max-width: calc(25% - 2px);
+	margin-top: 12px;
+	margin-right: 20px;
+	max-width: calc(25% - 20px);
 }
 
 .widget {
@@ -1042,6 +1042,12 @@ article {
 	margin-bottom: 28px;
 }
 
+.entry-title {
+	margin: 0;
+	margin-bottom: 5px;
+	font-size: 28px;
+}
+
 .site-content {
 	margin-top: 20px;
 	word-wrap: break-word;
@@ -1058,6 +1064,7 @@ article {
 	float: left;
 	margin-right: 50px;
 	margin-left: 90px;
+	margin-top: 12px;
 	width: 100%;
 	max-width: calc(75% - 140px);
 }
@@ -1109,6 +1116,11 @@ article {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.entry-footer a {
+	color: inherit;
+	text-decoration: underline;
 }
 
 .cat-links:after,
