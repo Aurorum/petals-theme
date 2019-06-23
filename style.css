@@ -7,7 +7,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: petals
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, flexible-header, featured-images, custom-header, custom-logo, custom-menu, sticky-post, threaded-comments, translation-ready, blog 
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, featured-images, featured-image-header, flexible-header, theme-options, custom-header, custom-logo, custom-menu, sticky-post, threaded-comments, translation-ready, blog
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -395,7 +395,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: #787676; /* Pass contrast standards */
+	color: #757272; /* Pass contrast standards */
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -852,6 +852,19 @@ a.panel-button:visited {
 	text-decoration: none;
 }
 
+.main-navigation li.page_item_has_children a:after {
+	content: "\2193";
+	padding-left: 2px;
+}
+
+.main-navigation li.page_item_has_children .children a:after {
+	visibility: hidden;
+}
+
+.main-navigation .children li.page_item_has_children a:after {
+	visibility: visible;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -1003,9 +1016,9 @@ a.panel-button:visited {
 
 .widget-area {
 	float: right;
-	margin-top: 30px;
-	margin-right: 2px;
-	max-width: calc(25% - 2px);
+	margin-top: 12px;
+	margin-right: 20px;
+	max-width: calc(25% - 20px);
 }
 
 .widget {
@@ -1029,7 +1042,14 @@ article {
 	margin-bottom: 28px;
 }
 
+.entry-title {
+	margin: 0;
+	margin-bottom: 5px;
+	font-size: 28px;
+}
+
 .site-content {
+	margin-top: 20px;
 	word-wrap: break-word;
 }
 
@@ -1044,6 +1064,7 @@ article {
 	float: left;
 	margin-right: 50px;
 	margin-left: 90px;
+	margin-top: 12px;
 	width: 100%;
 	max-width: calc(75% - 140px);
 }
@@ -1095,6 +1116,11 @@ article {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.entry-footer a {
+	color: inherit;
+	text-decoration: underline;
 }
 
 .cat-links:after,
