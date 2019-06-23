@@ -28,6 +28,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Navigation
 	## Links
 	## Menus
+# Header and Panels
 # Accessibility
 # Alignments
 # Clearings
@@ -632,11 +633,6 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-## Header
---------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
 
@@ -650,145 +646,14 @@ a:hover, a:active {
 	width: 100%;
 }
 
-.custom-logo-link img {
-	position: absolute;
-	left: 0;
-	height: 120px;
-	width: 120px;
-	top: 120px;
-}
-
-.front-panel > * {
-	margin-bottom: 0;
-}
-
 .menu-title {
 	display: none;
 	float: left;
 }
 
-.front-panel-blob {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin-right: 280px;
-}
-
-.customize-partial-edit-shortcuts-shown .front-panel-blob {
-	margin-right: 200px;
-}
-
-@media only screen and (max-width: 1800px) {
-	.front-panel-blob {
-		display: none;
-	}
-}
-
-.site-description {
-	position: relative;
-	top: 10px;
-	margin-right: 20px;
-	text-align: right;
-}
-
-.main-navigation {
-	position: relative;
-	z-index: 2;
-}
-
-.bottom-panel-text {
-	margin-bottom: 32px;
-}
-
-.panel-button {
-	padding: 20px 65px;
-}
-
-.centrebg {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.promotion-image {
-	background-color: #000;
-	height: 350px;
-}
-
-.front-panel-wrapper {
-	height: 700px;
-	width: 100%;
-}
-
-.full-header .site-description,
-.full-header .custom-header,
-.full-header .front-panel-blob {
-	display: none;
-}
-
-.promotion-text {
-	color: white;
-	text-align: center; 
-	padding-top: 50px;
-}
-
-.promotion-title {
-	font-size: 42px;
-	margin-top: 0;
-	margin-bottom: 8px;
-}
-
-.promotion-subtitle {
-	margin-top: 0;
-	margin-bottom: 32px;
-}
-
-a.panel-button,
-a.panel-button:active,
-a.panel-button:visited {
-	color: white;
-}
-
 .menu {
 	float: right;
 	margin-top: 10px;
-}
-
-.site-branding {
-	float: left;
-}
-
-.site-branding h1 {
-	font-size: 28px;
-	margin: 0;
-	margin-left: 50px;
-}
-
-.front-panel {
-	margin-top: 200px;
-	width: 50%;
-	text-align: center;
-	float: left;
-}
-
-.small-panel-text {
-	margin: 0;
-	margin-right: 120px;
-	font-size: 14px;
-	font-style: italic;
-	font-weight: 300;
-}
-
-.custom-header {
-	float: right;
-	height: 700px;
-	max-width: 50%;
-	position: relative;
-}
-
-.custom-logo-link a {
-	display: inline-block;
-	width: 100px;
 }
 
 .main-navigation .children {
@@ -900,6 +765,141 @@ a.panel-button:visited {
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+.front-panel > * {
+	margin-bottom: 0;
+}
+
+.front-panel-blob {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-right: 280px;
+}
+
+@media only screen and (max-width: 1800px) {
+	.front-panel-blob {
+		display: none;
+	}
+}
+
+.customize-partial-edit-shortcuts-shown .front-panel-blob {
+	display: block;
+	margin-right: 200px;
+}
+
+.site-description {
+	position: relative;
+	top: 10px;
+	margin-right: 20px;
+	text-align: right;
+}
+
+.main-navigation {
+	position: relative;
+	z-index: 2;
+}
+
+.bottom-panel-text {
+	margin-bottom: 32px;
+}
+
+.panel-button {
+	padding: 20px 65px;
+}
+
+.centrebg {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.promotion-image {
+	background-color: #000;
+	height: 350px;
+}
+
+.front-panel-wrapper {
+	height: 700px;
+	width: 100%;
+}
+
+.full-header .site-description,
+.full-header .custom-header,
+.full-header .front-panel-blob {
+	display: none;
+}
+
+.promotion-text {
+	color: white;
+	text-align: center; 
+	padding-top: 50px;
+}
+
+.promotion-title {
+	font-size: 42px;
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+.promotion-subtitle {
+	margin-top: 0;
+	margin-bottom: 32px;
+}
+
+a.panel-button,
+a.panel-button:active,
+a.panel-button:visited {
+	color: white;
+}
+
+.site-branding {
+	float: left;
+}
+
+.site-branding h1 {
+	font-size: 28px;
+	margin: 0;
+	margin-left: 50px;
+}
+
+.front-panel {
+	margin-top: 200px;
+	width: 50%;
+	text-align: center;
+	float: left;
+}
+
+.small-panel-text {
+	margin: 0;
+	margin-right: 120px;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 300;
+}
+
+.custom-header {
+	float: right;
+	height: 700px;
+	max-width: 50%;
+	position: relative;
+}
+
+.custom-logo-link a {
+	display: inline-block;
+	width: 100px;
+}
+
+.custom-logo-link img {
+	position: absolute;
+	left: 0;
+	height: 120px;
+	width: 120px;
+	top: 120px;
 }
 
 .bold-header .main-navigation {
@@ -1014,15 +1014,15 @@ a.panel-button:visited {
 # Widgets
 --------------------------------------------------------------*/
 
+.widget {
+	margin: 0 0 1.5em;
+}
+
 .widget-area {
 	float: right;
 	margin-top: 12px;
 	margin-right: 20px;
 	max-width: calc(25% - 20px);
-}
-
-.widget {
-	margin: 0 0 1.5em;
 }
 
 .widget select {
