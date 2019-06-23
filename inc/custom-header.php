@@ -15,7 +15,7 @@
  */
 function petals_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'petals_custom_header_args', array(
-		'default-image'          => get_template_directory_uri() . '/resources/coffee.png',
+		'default-image'          => get_template_directory_uri() . '/resources/gardens.png',
 		'default-text-color'     => '000000',
 		'width'                  => 780,
 		'height'                 => 700,
