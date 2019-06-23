@@ -1187,7 +1187,14 @@ article {
 	text-align: center;
 }
 
-.bypostauthor {
+.comment-edit-link {
+	margin-left: 8px;
+	text-decoration: underline;
+}
+
+.comment.bypostauthor .comment-body {
+	background-color: #e8e2e2;
+	color: #676565;
 	display: block;
 }
 
