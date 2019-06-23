@@ -62,12 +62,12 @@
   </g>
 </svg>
 	<?php endif; ?>
-			<h6 class="small-panel-text"> <?php echo get_theme_mod('petals_small_text', 'Enter your own description here'); ?> </h6>
-			<h1 class="top-panel-text"> <?php echo get_theme_mod('petals_top_text', 'Enter your own title here'); ?> </h1>
-			<h3 class ="bottom-panel-text"> <?php echo get_theme_mod('petals_bottom_text', 'Enter your own subtitle here'); ?> </h3>
+			<h6 class="small-panel-text"> <?php echo get_theme_mod('petals_small_text', __('Enter your own description here') ); ?> </h6>
+			<h1 class="top-panel-text"> <?php echo get_theme_mod('petals_top_text', __('Enter your own title here') ); ?> </h1>
+			<h3 class ="bottom-panel-text"> <?php echo get_theme_mod('petals_bottom_text', __('Enter your own subtitle here') ); ?> </h3>
 			<?php if ( get_theme_mod( 'petals_panel_button' ) == 1 ) : ?> 
-			<a class="panel-button button" href="<?php echo get_theme_mod('petals_panel_buttonlink', 'Enter your own button here'); ?>">
-					<?php echo get_theme_mod('petals_panel_buttontext', 'Enter your own button here'); ?>
+			<a class="panel-button button" href="<?php echo get_theme_mod('petals_panel_buttonlink', __('Enter your own button here') ); ?>">
+					<?php echo get_theme_mod('petals_panel_buttontext', __('Enter your own button here') ); ?>
 			</a>
 			<?php endif; ?>
 			</div>
@@ -83,10 +83,10 @@
 		<div class="promotion-image centrebg" style="background-image: url(<?php echo get_theme_mod('petals_promotion_image'); ?>)">
 			<div class="promotion-text">
 			<h1 class="promotion-title"> <?php echo get_theme_mod('petals_promotion_heading', 'Enter your own title here'); ?> </h1>
-			<h3 class ="promotion-subtitle"> <?php echo get_theme_mod('petals_promotion_subtitle', 'Enter your own subtitle here'); ?> </h3>
+			<h3 class ="promotion-subtitle"> <?php echo get_theme_mod('petals_promotion_subtitle', __('Enter your own subtitle here') ); ?> </h3>
 					<?php if ( get_theme_mod( 'petals_promotion_button' ) == 1 ) : ?> 
-			<a class="promotion-button panel-button" href="<?php echo get_theme_mod('petals_promotion_button_link', 'Enter your own button here'); ?>">
-					<?php echo get_theme_mod('petals_promotion_button_text', 'Enter your own button here'); ?>
+			<a class="promotion-button panel-button" href="<?php echo get_theme_mod('petals_promotion_button_link', __('Enter your own button here') ); ?>">
+					<?php echo get_theme_mod('petals_promotion_button_text', __('Enter your own button here') ); ?>
 			</a>
 			<?php endif; ?>
 			</div>
