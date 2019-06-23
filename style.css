@@ -395,7 +395,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: #787676; /* Pass contrast standards */
+	color: #757272; /* Pass contrast standards */
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -852,6 +852,19 @@ a.panel-button:visited {
 	text-decoration: none;
 }
 
+.main-navigation li.page_item_has_children a:after {
+	content: "\2193";
+	padding-left: 2px;
+}
+
+.main-navigation li.page_item_has_children .children a:after {
+	visibility: hidden;
+}
+
+.main-navigation .children li.page_item_has_children a:after {
+	visibility: visible;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -1030,6 +1043,7 @@ article {
 }
 
 .site-content {
+	margin-top: 20px;
 	word-wrap: break-word;
 }
 
