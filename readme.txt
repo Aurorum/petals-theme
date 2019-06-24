@@ -31,6 +31,7 @@ Petals includes support for Infinite Scroll in Jetpack.
 == Changelog ==
 
 = 1.1 - July ?? 2019 =
+* Add support for the Jetpack Social Menu
 * Distinguish more clearly the difference between an author comment
 * Improve organisation of styling
 
