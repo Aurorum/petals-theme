@@ -46,7 +46,7 @@
 			<?php
 			$petals_description = get_bloginfo( 'description', 'display' );
 			if ( ( $petals_description || is_customize_preview() ) && get_theme_mod( 'petals_panel_header' ) == 0 ) :
-				?>
+				if ( function_exists( 'jetpack_social_menu' ) ) jetpack_social_menu(); ?>
 				<p class="site-description"><?php echo $petals_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		
