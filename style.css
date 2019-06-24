@@ -730,6 +730,14 @@ a:hover, a:active {
 	visibility: visible;
 }
 
+.jetpack-social-navigation {
+	font-size: 26px;
+	float: left;
+	height: 0;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -766,6 +774,7 @@ a:hover, a:active {
 	text-align: right;
 	width: 50%;
 }
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
