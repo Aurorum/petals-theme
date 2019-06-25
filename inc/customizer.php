@@ -70,7 +70,7 @@ function petals_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'petals_small_text', array(
   		'capability' => 'edit_theme_options',
-  		'default' => __('Enter your own subtitle here', 'petals' ),
+  		'default' => __('This can be edited from your Customizer', 'petals' ),
   		'sanitize_callback' => 'sanitize_text_field',
 		'transport' => 'refresh',
 	) );
@@ -84,7 +84,7 @@ function petals_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'petals_top_text', array(
   		'capability' => 'edit_theme_options',
-  		'default' => __('Enter your own description here', 'petals' ),
+  		'default' => __('Wildlife & Floral Exhibition', 'petals' ),
   		'sanitize_callback' => 'sanitize_text_field',
 		'transport' => 'refresh',
 	) );
@@ -98,7 +98,7 @@ function petals_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'petals_bottom_text', array(
   		'capability' => 'edit_theme_options',
-  		'default' => __( 'Enter your own subtitle here', 'petals' ),
+  		'default' => __( 'Members Exclusive', 'petals' ),
   		'sanitize_callback' => 'sanitize_text_field',
 		'transport' => 'refresh',
 	) );
@@ -166,7 +166,7 @@ function petals_customize_register( $wp_customize ) {
 
 	if ( get_theme_mod( 'petals_panel_header' ) == 0 ) {
 		$wp_customize->add_setting( 'petals_blob_colour', array(
-			'default' => '#ff0000',
+			'default' => '#39732c',
 			'sanitize_callback'  => 'esc_attr',
 		) );
 
