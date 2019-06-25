@@ -1032,6 +1032,7 @@ a.panel-button:visited {
 	margin-top: 12px;
 	margin-right: 20px;
 	max-width: calc(25% - 20px);
+	width: 100%;
 }
 
 .widget select {
