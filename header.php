@@ -58,13 +58,13 @@
 		<div class="front-panel">
 	<?php if ( get_theme_mod( 'petals_blob' ) == 1 && get_theme_mod( 'petals_panel_header' ) == 0 ) : ?> <svg class="front-panel-blob" width="800" height="800" viewBox="0 0 600 600">
   <g transform="translate(300,300)">
-    <path d="M133,-198.4C176.2,-179.1,217.7,-148.8,230.1,-108.8C242.4,-68.9,225.6,-19.4,210.2,24.3C194.7,68,180.5,106.1,156.4,137.7C132.3,169.3,98.4,194.5,60.4,205.7C22.4,216.8,-19.8,214,-67.9,209.7C-115.9,205.3,-169.8,199.6,-191.1,169C-212.5,138.3,-201.3,82.8,-204.8,31.9C-208.3,-19,-226.5,-65.4,-213.6,-99.2C-200.8,-133.1,-156.9,-154.5,-116.1,-174.8C-75.3,-195.2,-37.7,-214.6,3.6,-220.2C44.9,-225.8,89.7,-217.6,133,-198.4Z" fill="#FE840E"/>
+    <path d="M133,-198.4C176.2,-179.1,217.7,-148.8,230.1,-108.8C242.4,-68.9,225.6,-19.4,210.2,24.3C194.7,68,180.5,106.1,156.4,137.7C132.3,169.3,98.4,194.5,60.4,205.7C22.4,216.8,-19.8,214,-67.9,209.7C-115.9,205.3,-169.8,199.6,-191.1,169C-212.5,138.3,-201.3,82.8,-204.8,31.9C-208.3,-19,-226.5,-65.4,-213.6,-99.2C-200.8,-133.1,-156.9,-154.5,-116.1,-174.8C-75.3,-195.2,-37.7,-214.6,3.6,-220.2C44.9,-225.8,89.7,-217.6,133,-198.4Z" fill="#39732c"/>
   </g>
 </svg>
 	<?php endif; ?>
-			<h6 class="small-panel-text"> <?php echo get_theme_mod('petals_small_text', __('Enter your own description here', 'petals') ); ?> </h6>
-			<h1 class="top-panel-text"> <?php echo get_theme_mod('petals_top_text', __('Enter your own title here', 'petals') ); ?> </h1>
-			<h3 class ="bottom-panel-text"> <?php echo get_theme_mod('petals_bottom_text', __('Enter your own subtitle here', 'petals') ); ?> </h3>
+			<h6 class="small-panel-text"> <?php echo get_theme_mod('petals_small_text', __('This can be edited from your Customizer', 'petals') ); ?> </h6>
+			<h1 class="top-panel-text"> <?php echo get_theme_mod('petals_top_text', __('Wildlife & Floral Exhibition', 'petals') ); ?> </h1>
+			<h3 class ="bottom-panel-text"> <?php echo get_theme_mod('petals_bottom_text', __('Members Exclusive', 'petals') ); ?> </h3>
 			<?php if ( get_theme_mod( 'petals_panel_button' ) == 1 ) : ?> 
 			<a class="panel-button button" href="<?php echo get_theme_mod('petals_panel_buttonlink', __('Enter your own button here', 'petals') ); ?>">
 					<?php echo get_theme_mod('petals_panel_buttontext', __('Enter your own button here', 'petals') ); ?>
