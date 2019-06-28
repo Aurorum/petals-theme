@@ -25,13 +25,13 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'petals' ); ?></a>
 
 		<nav id="site-navigation" class="main-navigation">
+			<svg aria-controls="primary-menu" aria-expanded="false" class="menu-toggle"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6"/></svg>
 				<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) :
 				?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		</div><!-- .site-branding -->
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'petals' ); ?></button>
 			<?php endif; ?>
 			<h1 class="site-title menu-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php
