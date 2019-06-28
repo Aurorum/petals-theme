@@ -32,6 +32,7 @@ Petals includes support for Infinite Scroll in Jetpack.
 
 = 1.1 - July ?? 2019 =
 * Add support for the Jetpack Social Menu
+* Centralise Customizer panels under "Theme Options"
 * Distinguish more clearly the difference between an author comment
 * Prevent distorted layout in the Customizer when toggling the display of the site title and description
 * Let the immediate activation of the theme result in text and colours which are similar to that of the theme's screenshot
