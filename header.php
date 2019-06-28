@@ -25,7 +25,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'petals' ); ?></a>
 
 		<nav id="site-navigation" class="main-navigation">
-			<svg aria-controls="primary-menu" aria-expanded="false" class="menu-toggle"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6"/></svg>
+			<button aria-controls="primary-menu" aria-expanded="false" class="menu-toggle"><svg class="menu-toggle-icon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6"/></svg></button>
 				<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) :
