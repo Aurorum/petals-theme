@@ -670,7 +670,6 @@ a:hover, a:active {
 }
 
 .main-navigation ul {
-	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -738,24 +737,6 @@ a:hover, a:active {
 	margin-left: 20px;
 }
 
-.menu-toggle {
-	background: transparent;
-	border: 0;
-	display: none;
-	padding: 0;
-	height: 0;
-}
-
-.menu-toggle-icon {
-	margin-top: 10px;
-	margin-right: 20px;
-	right: 0;
-	height: 24px;
-	width: 24px;
-	position: absolute;
-	transform: scale(1.5);
-}
-
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -776,6 +757,49 @@ a:hover, a:active {
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+
+.menu-toggle {
+	background: transparent;
+	border: 0;
+	display: none;
+	padding: 0;
+	height: 0;
+}
+
+.menu-toggle-icon {
+	margin-top: 10px;
+	margin-right: 20px;
+	right: 0;
+	height: 24px;
+	width: 24px;
+	position: absolute;
+	transform: scale(1.5);
+}
+
+.main-navigation.toggled .menu li {
+	text-align: center;
+	padding-top: 8px;
+	width: 100%;
+}
+
+@keyframes rotateHamburger {
+	0% {
+		transform: scale(1.5);
+	}
+	
+	99% {
+		transform: rotate(90deg) scale(1.5);
+	}
+	
+	100% {
+		transform: rotate(90deg) scale(1.5);
+	}
+}
+
+.main-navigation.toggled .menu-toggle-icon {
+	-webkit-animation: rotateHamburger 0.8s forwards;
+	animation: rotateHamburger 0.8s forwards;
 }
 
 /*--------------------------------------------------------------
@@ -1246,6 +1270,12 @@ article {
 embed,
 iframe,
 object {
+	max-width: 100%;
+}
+
+/* This shouldn't really be necessary for a theme to style
+   It probably can be removed some point in the future */
+.wp-block-embed-facebook span {
 	max-width: 100%;
 }
 
