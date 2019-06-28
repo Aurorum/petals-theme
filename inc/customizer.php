@@ -15,6 +15,11 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	$wp_customize->add_panel( 'petals_theme_options' , array(
+    		'title'      => __( 'Theme Options', 'petals' ),
+    		'priority'   => 30,
+	) );
 	
 	$wp_customize->add_setting( 'petals_link_colour', array(
 		'default' => '#EF6079FF',
@@ -42,6 +47,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'petals_frontpanel' , array(
     	'title'      => __( 'Front Page Panels', 'petals' ),
     	'priority'   => 30,
+	'panel'      => 'petals_theme_options',
 	) );
 	
 	$wp_customize->add_setting( 'petals_panel_colour', array(
@@ -59,7 +65,9 @@ function petals_customize_register( $wp_customize ) {
   		'type' => 'checkbox',
   		'section' => 'petals_frontpanel',
   		'label' => __( 'Bold Front Page Design', 'petals' ),
-		'description' => __( "This makes your header fill your reader's screen - try it!", 'petals' ),
+		'description' => __( "This makes your header fill your reader's screen - try it! 
+				Note: This will prevent the blob and panel background colour 
+				Front Panel options from having an impact until your bold design is disabled.", 'petals' ),
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'petals_panel_colour', array(
@@ -189,8 +197,9 @@ function petals_customize_register( $wp_customize ) {
 	) ) );
 	
 	$wp_customize->add_section( 'petals_promotion' , array(
-    	'title'      => __( 'Promotion Panel', 'petals' ),
-    	'priority'   => 30,
+    		'title'      => __( 'Promotion Panel', 'petals' ),
+    		'priority'   => 30,
+		'panel'      => 'petals_theme_options',
 	) );
 	
 	$wp_customize->add_setting( 'petals_display_promotion', array(
@@ -210,7 +219,7 @@ function petals_customize_register( $wp_customize ) {
         'transport'     => 'refresh',
         'height'        => 180,
         'width'        => 160,
-		'sanitize_callback'  => 'esc_attr',
+	'sanitize_callback'  => 'esc_attr',
     ));
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'petals_promotion_image', array(
