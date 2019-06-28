@@ -738,19 +738,22 @@ a:hover, a:active {
 	margin-left: 20px;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+.menu-toggle {
+	background: transparent;
+	border: 0;
+	display: none;
+	padding: 0;
+	height: 0;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+.menu-toggle-icon {
+	margin-top: 10px;
+	margin-right: 20px;
+	right: 0;
+	height: 24px;
+	width: 24px;
+	position: absolute;
+	transform: scale(1.5);
 }
 
 .site-main .comment-navigation, .site-main
@@ -1335,6 +1338,7 @@ object {
 		margin-right: 20px;
 		margin-left: 20px;
 		max-width: calc(100% - 40px);
+		width: 100%;
 	}
 }
 
@@ -1342,7 +1346,6 @@ object {
 	
 	.site-branding h1 {
 		margin-left: 0;
-		text-align: center;
 	}
 	
 	.custom-header {
@@ -1356,10 +1359,13 @@ object {
 		width: 100%;
 	}
 	
+	.main-navigation ul {
+		display: none;
+	}
+	
+	.main-navigation.toggled ul,
 	.menu-toggle {
-		position: absolute; 
-		right: 50%;
-		transform: translateX(50%);
+		display: block;
 	}
 	
 	.site-description,
