@@ -1027,6 +1027,10 @@ a.panel-button:visited {
 	margin: 0 0 1.5em;
 }
 
+.widget ul {
+	margin-left: 20px;
+}
+
 .widget-area {
 	float: right;
 	margin-top: 12px;
@@ -1330,7 +1334,7 @@ object {
 	.content-area {
 		margin-right: 20px;
 		margin-left: 20px;
-		max-width: none;
+		max-width: calc(100% - 40px);
 	}
 }
 
