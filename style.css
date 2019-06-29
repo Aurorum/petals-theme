@@ -29,6 +29,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Links
 	## Menus
 # Header and Panels
+# Front Page Blocks
 # Accessibility
 # Alignments
 # Clearings
@@ -804,7 +805,7 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-# Header
+# Header and Panels
 --------------------------------------------------------------*/
 
 .front-panel > * {
@@ -891,7 +892,8 @@ a:hover, a:active {
 a.panel-button,
 a.panel-button:active,
 a.panel-button:visited {
-	color: white;
+	display: inline-block;
+	color: #fff;
 }
 
 .site-branding {
@@ -950,6 +952,57 @@ a.panel-button:visited {
 	padding-top: 40px; 
 	padding-bottom: 80px;
 	transform: translateX(50%);
+}
+
+/*--------------------------------------------------------------
+# Front Page Blocks
+--------------------------------------------------------------*/
+.petals-block-wrapper {
+	margin-left: 5%;
+}
+
+.petals-block-wrapper h2 {
+	margin: 0;
+}
+
+.petals-block-wrapper .panel-button {
+	padding: 12px;
+}
+
+.petals-block-wrapper img {
+	height: 400px;
+	width: 600px;
+	-webkit-transition: 1.5s;
+	transition: 1.5s;
+}
+
+.petals-block-wrapper img:hover {
+	transform: rotate(-4deg);
+}
+
+.petals-block-two img:hover {
+	transform: rotate(4deg);
+}
+
+.petals-block-one,
+.petals-block-two,
+.petals-block-three {
+	display: flex;
+	margin-bottom: 60px;
+}
+
+.block-one-contents-wrapper,
+.block-three-contents-wrapper {
+	margin: auto 80px auto 40px;
+}
+
+.petals-block-two {
+	margin-right: 140px;
+}
+
+.block-two-contents-wrapper {
+	margin: auto;
+	margin-left: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1371,6 +1424,36 @@ object {
 		max-width: calc(100% - 40px);
 		width: 100%;
 	}
+	
+	.petals-block-wrapper {
+		margin: auto;
+	}
+	
+	.petals-block-wrapper img {
+		order: 1;
+		margin-bottom: 6px;
+		width: 100%;
+	}
+	
+	.petals-block-wrapper img:hover {
+		transform: none;
+	}
+	
+	.petals-block-one, 
+	.petals-block-two, 
+	.petals-block-three {
+		margin: auto;
+		margin-bottom: 50px;
+		flex-direction: column;
+	}
+	
+	.block-one-contents-wrapper, 
+	.block-two-contents-wrapper, 
+	.block-three-contents-wrapper {
+		order: 2;
+		margin: auto;
+		text-align: center;
+	}	
 }
 
 @media screen and (max-width: 425px) {
