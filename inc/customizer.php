@@ -490,19 +490,19 @@ function petals_customize_register( $wp_customize ) {
   		'label' => __( 'Button Link', 'petals' ),
 	) );
 	
-$wp_customize->add_section( 'petals_block_three' , array(
+	$wp_customize->add_section( 'petals_block_three' , array(
     		'title'      => __( 'Block Three', 'petals' ),
     		'priority'   => 30,
 		'panel'      => 'petals_theme_options',
 	) );
 	
-	$wp_customize->add_setting( 'petals_display_promotion', array(
+	$wp_customize->add_setting( 'petals_display_block_three', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
 	) );
 	
-	$wp_customize->add_control( 'petals_display_promotion', array(
+	$wp_customize->add_control( 'petals_display_block_three', array(
   		'type' => 'checkbox',
   		'section' => 'petals_block_three',
   		'label' => __( 'Display Block Three', 'petals' ),
