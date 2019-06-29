@@ -7,6 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package Petals
+ * TO DO: Update default images without linking to something
  */
 
 ?>
@@ -96,7 +97,9 @@
 	<div class="petals-block-wrapper">
 	<?php if ( get_theme_mod( 'petals_display_block_one' ) == 1 ) : ?>
 		<div class="petals-block-one">
+			<?php if ( get_theme_mod( 'petals_block_one_image' ) ) : ?>
 				<img src="<?php echo get_theme_mod('petals_block_one_image'); ?>">
+			<?php endif; ?>
 			<?php if ( ! get_theme_mod( 'petals_block_one_image' ) ) : ?>
 			<img src="https://clubpenguinmountains.files.wordpress.com/2019/06/club-penguin-mountains-island-adventure-party-header.png">
 			<?php endif; ?>
@@ -111,10 +114,6 @@
 	<?php endif; ?>
 	<?php if ( get_theme_mod( 'petals_display_block_two' ) == 1 ) : ?>
 		<div class="petals-block-two">
-				<img src="<?php echo get_theme_mod('petals_block_two_image'); ?>">
-			<?php if ( ! get_theme_mod( 'petals_block_two_image' ) ) : ?>
-			<img src="https://clubpenguinmountains.files.wordpress.com/2019/06/club-penguin-mountains-island-adventure-party-header.png">
-			<?php endif; ?>
 			<div class="block-two-contents-wrapper">
 				<h2 class ="block-two-heading"> <?php echo get_theme_mod('petals_block_two_heading', __('An ocean of violets in bloom', 'petals') ); ?></h2>
 				<p class ="block-two-text"> <?php echo get_theme_mod('petals_block_two_text', __('An ocean of violets in bloom', 'petals') ); ?></p>
@@ -122,11 +121,19 @@
 					<?php echo get_theme_mod('petals_block_two_cta_text', __('Enter your own button here', 'petals' ) ); ?>
 				</a>
 			</div>
+			<?php if ( get_theme_mod( 'petals_block_two_image' ) ) : ?>
+				<img src="<?php echo get_theme_mod('petals_block_two_image'); ?>">
+			<?php endif; ?>
+			<?php if ( ! get_theme_mod( 'petals_block_two_image' ) ) : ?>
+			<img src="https://clubpenguinmountains.files.wordpress.com/2019/06/club-penguin-mountains-island-adventure-party-header.png">
+			<?php endif; ?>
 		</div>
 	<?php endif; ?>
 		<?php if ( get_theme_mod( 'petals_display_block_three' ) == 1 ) : ?>
 		<div class="petals-block-three">
+			<?php if ( get_theme_mod( 'petals_block_three_image' ) ) : ?>
 				<img src="<?php echo get_theme_mod('petals_block_three_image'); ?>">
+			<?php endif; ?>
 			<?php if ( ! get_theme_mod( 'petals_block_three_image' ) ) : ?>
 			<img src="https://clubpenguinmountains.files.wordpress.com/2019/06/club-penguin-mountains-island-adventure-party-header.png">
 			<?php endif; ?>
