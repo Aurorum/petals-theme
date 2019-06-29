@@ -857,6 +857,7 @@ a:hover, a:active {
 }
 
 .promotion-image {
+	display: flex;
 	background-color: #000;
 	height: 350px;
 }
@@ -873,9 +874,9 @@ a:hover, a:active {
 }
 
 .promotion-text {
-	color: white;
+	color: #fff;
+	margin: auto;
 	text-align: center; 
-	padding-top: 50px;
 }
 
 .promotion-title {
@@ -947,7 +948,7 @@ a.panel-button:visited {
 
 .bold-header .front-panel {
 	background-color: rgba(255,255,255, 0.85);
-	color: black;
+	color: #000;
 	margin-top: 180px;
 	padding-top: 40px; 
 	padding-bottom: 80px;
@@ -958,6 +959,7 @@ a.panel-button:visited {
 # Front Page Blocks
 --------------------------------------------------------------*/
 .petals-block-wrapper {
+	margin-top: 24px;
 	margin-left: 5%;
 }
 
