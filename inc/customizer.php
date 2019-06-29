@@ -45,9 +45,9 @@ function petals_customize_register( $wp_customize ) {
 	) ) );
 	
 	$wp_customize->add_section( 'petals_frontpanel' , array(
-    	'title'      => __( 'Front Page Panels', 'petals' ),
-    	'priority'   => 30,
-	'panel'      => 'petals_theme_options',
+    		'title'      => __( 'Front Page Panels', 'petals' ),
+    		'priority'   => 30,
+		'panel'      => 'petals_theme_options',
 	) );
 	
 	$wp_customize->add_setting( 'petals_panel_colour', array(
@@ -166,7 +166,7 @@ function petals_customize_register( $wp_customize ) {
 	) );
 	
 	$wp_customize->add_control( 'petals_panel_buttonlink', array(
-  		'type' => 'text',
+  		'type' => 'url',
   		'section' => 'petals_frontpanel',
   		'label' => __( 'Button Link', 'petals' ),
 		'description' => __( 'Where does the button lead to?', 'petals' ),
@@ -284,7 +284,7 @@ function petals_customize_register( $wp_customize ) {
 	) );
 	
 	$wp_customize->add_control( 'petals_promotion_button_link', array(
-  		'type' => 'text',
+  		'type' => 'url',
   		'section' => 'petals_promotion',
   		'label' => __( 'Button Link', 'petals' ),
 		'description' => __( 'Where does the button lead to?', 'petals' ),
@@ -302,6 +302,285 @@ function petals_customize_register( $wp_customize ) {
   		'section' => 'petals_promotion',
   		'label' => __( 'Spacing Between Header', 'petals' ),
 		'description' => __( 'Measured in px; increase the number to largen the space between your header and promotion', 'petals' ),
+	) );
+	
+	$wp_customize->add_section( 'petals_block_one' , array(
+    		'title'      => __( 'Block One', 'petals' ),
+    		'priority'   => 30,
+		'panel'      => 'petals_theme_options',
+	) );
+	
+	$wp_customize->add_setting( 'petals_display_block_one', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_display_block_one', array(
+  		'type' => 'checkbox',
+  		'section' => 'petals_block_one',
+  		'label' => __( 'Display Block One', 'petals' ),
+		'description' => __( 'Blocks allow you to display important content side-by-side, along with a call-to-action button' , 'petals' ),
+	) );
+	
+   	 $wp_customize->add_setting('petals_block_one_image', array(
+     	   	'transport'     => 'refresh',
+     	   	'height'        => 400,
+     	   	'width'        => 600,
+	   	'sanitize_callback'  => 'esc_attr',
+  	 ));
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'petals_block_one_image', array(
+      	  	'label' => __('Block One Image', 'petals'),
+      	 	'section' => 'petals_block_one',
+     	  	'settings' => 'petals_block_one_image',
+   	))); 
+	
+	$wp_customize->add_setting( 'petals_block_one_heading', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_one_heading', array(
+  		'type' => 'text',
+  		'section' => 'petals_block_one',
+  		'label' => __( 'Block Heading', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_one_text', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_one_text', array(
+  		'type' => 'textarea',
+  		'section' => 'petals_block_one',
+  		'label' => __( 'Block Text', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_one_cta', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'default' => 1,
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_one_cta', array(
+  		'type' => 'checkbox',
+  		'section' => 'petals_block_one',
+  		'label' => __( 'Display a Call-to-Action Button', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_one_cta_text', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_one_cta_text', array(
+  		'type' => 'text',
+  		'section' => 'petals_block_one',
+  		'label' => __( 'Button Text', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_one_cta_link', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_one_cta_link', array(
+  		'type' => 'url',
+  		'section' => 'petals_block_one',
+  		'label' => __( 'Button Link', 'petals' ),
+	) );
+	
+	$wp_customize->add_section( 'petals_block_two' , array(
+    		'title'      => __( 'Block Two', 'petals' ),
+    		'priority'   => 30,
+		'panel'      => 'petals_theme_options',
+	) );
+	
+	$wp_customize->add_setting( 'petals_display_block_two', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_display_block_two', array(
+  		'type' => 'checkbox',
+  		'section' => 'petals_block_two',
+  		'label' => __( 'Display Block Two', 'petals' ),
+		'description' => __( 'Blocks allow you to display important content side-by-side, along with a call-to-action button' , 'petals' ),
+	) );
+	
+   	 $wp_customize->add_setting('petals_block_two_image', array(
+     	   	'transport'     => 'refresh',
+     	   	'height'        => 400,
+     	   	'width'        => 600,
+	   	'sanitize_callback'  => 'esc_attr',
+  	 ));
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'petals_block_two_image', array(
+      	  	'label' => __('Block Two Image', 'petals'),
+      	 	'section' => 'petals_block_two',
+     	  	'settings' => 'petals_block_two_image',
+   	))); 
+	
+	$wp_customize->add_setting( 'petals_block_two_heading', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_two_heading', array(
+  		'type' => 'text',
+  		'section' => 'petals_block_two',
+  		'label' => __( 'Block Heading', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_two_text', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_two_text', array(
+  		'type' => 'textarea',
+  		'section' => 'petals_block_two',
+  		'label' => __( 'Block Text', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_two_cta', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'default' => 1,
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_two_cta', array(
+  		'type' => 'checkbox',
+  		'section' => 'petals_block_two',
+  		'label' => __( 'Display a Call-to-Action Button', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_two_cta_text', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_two_cta_text', array(
+  		'type' => 'text',
+  		'section' => 'petals_block_two',
+  		'label' => __( 'Button Text', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_two_cta_link', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_two_cta_link', array(
+  		'type' => 'url',
+  		'section' => 'petals_block_two',
+  		'label' => __( 'Button Link', 'petals' ),
+	) );
+	
+$wp_customize->add_section( 'petals_block_three' , array(
+    		'title'      => __( 'Block Three', 'petals' ),
+    		'priority'   => 30,
+		'panel'      => 'petals_theme_options',
+	) );
+	
+	$wp_customize->add_setting( 'petals_display_promotion', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_display_promotion', array(
+  		'type' => 'checkbox',
+  		'section' => 'petals_block_three',
+  		'label' => __( 'Display Block Three', 'petals' ),
+		'description' => __( 'Blocks allow you to display important content side-by-side, along with a call-to-action button' , 'petals' ),
+	) );
+	
+   	 $wp_customize->add_setting('petals_block_three_image', array(
+     	   	'transport'     => 'refresh',
+     	   	'height'        => 400,
+     	   	'width'        => 600,
+	   	'sanitize_callback'  => 'esc_attr',
+  	 ));
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'petals_block_three_image', array(
+      	  	'label' => __('Block Three Image', 'petals'),
+      	 	'section' => 'petals_block_three',
+     	  	'settings' => 'petals_block_three_image',
+   	))); 
+	
+	$wp_customize->add_setting( 'petals_block_three_heading', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_three_heading', array(
+  		'type' => 'text',
+  		'section' => 'petals_block_three',
+  		'label' => __( 'Block Heading', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_three_text', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_three_text', array(
+  		'type' => 'textarea',
+  		'section' => 'petals_block_three',
+  		'label' => __( 'Block Text', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_three_cta', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'default' => 1,
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_three_cta', array(
+  		'type' => 'checkbox',
+  		'section' => 'petals_block_three',
+  		'label' => __( 'Display a Call-to-Action Button', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_three_cta_text', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_three_cta_text', array(
+  		'type' => 'text',
+  		'section' => 'petals_block_three',
+  		'label' => __( 'Button Text', 'petals' ),
+	) );
+	
+	$wp_customize->add_setting( 'petals_block_three_cta_link', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'esc_attr',
+	) );
+	
+	$wp_customize->add_control( 'petals_block_three_cta_link', array(
+  		'type' => 'url',
+  		'section' => 'petals_block_three',
+  		'label' => __( 'Button Link', 'petals' ),
 	) );
 	
 	if ( isset( $wp_customize->selective_refresh ) ) {
