@@ -92,5 +92,53 @@
 			</div>
 		</div>
 	</div>
-	<?php endif; endif; ?>
+	<?php endif; ?>
+	<div class="petals-block-wrapper">
+	<?php if ( get_theme_mod( 'petals_display_block_one' ) == 1 ) : ?>
+		<div class="petals-block-one">
+				<img src="<?php echo get_theme_mod('petals_block_one_image'); ?>">
+			<?php if ( ! get_theme_mod( 'petals_block_one_image' ) ) : ?>
+			<img src="https://clubpenguinmountains.files.wordpress.com/2019/06/club-penguin-mountains-island-adventure-party-header.png">
+			<?php endif; ?>
+			<div class="block-one-contents-wrapper">
+				<h2 class ="block-one-heading"> <?php echo get_theme_mod('petals_block_one_heading', __('An ocean of violets in bloom', 'petals') ); ?></h2>
+				<p class ="block-one-text"> <?php echo get_theme_mod('petals_block_one_text', __('An ocean of violets in bloom', 'petals') ); ?></p>
+				<a class="block-one-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_one_cta_link', __('Enter your own button here', 'petals' ) ); ?>">
+					<?php echo get_theme_mod('petals_block_one_cta_text', __('Enter your own button here', 'petals' ) ); ?>
+				</a>
+			</div>
+		</div>
+	<?php endif; ?>
+	<?php if ( get_theme_mod( 'petals_display_block_two' ) == 1 ) : ?>
+		<div class="petals-block-two">
+				<img src="<?php echo get_theme_mod('petals_block_two_image'); ?>">
+			<?php if ( ! get_theme_mod( 'petals_block_two_image' ) ) : ?>
+			<img src="https://clubpenguinmountains.files.wordpress.com/2019/06/club-penguin-mountains-island-adventure-party-header.png">
+			<?php endif; ?>
+			<div class="block-two-contents-wrapper">
+				<h2 class ="block-two-heading"> <?php echo get_theme_mod('petals_block_two_heading', __('An ocean of violets in bloom', 'petals') ); ?></h2>
+				<p class ="block-two-text"> <?php echo get_theme_mod('petals_block_two_text', __('An ocean of violets in bloom', 'petals') ); ?></p>
+				<a class="block-two-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_two_cta_link', __('Enter your own button here', 'petals' ) ); ?>">
+					<?php echo get_theme_mod('petals_block_two_cta_text', __('Enter your own button here', 'petals' ) ); ?>
+				</a>
+			</div>
+		</div>
+	<?php endif; ?>
+		<?php if ( get_theme_mod( 'petals_display_block_three' ) == 1 ) : ?>
+		<div class="petals-block-three">
+				<img src="<?php echo get_theme_mod('petals_block_three_image'); ?>">
+			<?php if ( ! get_theme_mod( 'petals_block_three_image' ) ) : ?>
+			<img src="https://clubpenguinmountains.files.wordpress.com/2019/06/club-penguin-mountains-island-adventure-party-header.png">
+			<?php endif; ?>
+			<div class="block-three-contents-wrapper">
+				<h2 class ="block-three-heading"> <?php echo get_theme_mod('petals_block_three_heading', __('An ocean of violets in bloom', 'petals') ); ?></h2>
+				<p class ="block-three-text"> <?php echo get_theme_mod('petals_block_three_text', __('An ocean of violets in bloom', 'petals') ); ?></p>
+				<a class="block-three-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_three_cta_link', __('Enter your own button here', 'petals' ) ); ?>">
+					<?php echo get_theme_mod('petals_block_three_cta_text', __('Enter your own button here', 'petals' ) ); ?>
+				</a>
+			</div>
+		</div>
+	<?php endif; ?>
+	</div>
+	<?php endif; ?>
 	<div id="content" class="site-content">
