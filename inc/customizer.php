@@ -3,7 +3,6 @@
  * Petals Theme Customizer
  *
  * @package Petals
- * TO DO: Defaults for 2/3
  */
 
 /**
@@ -443,6 +442,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( 'Sunsets of a Lifetime', 'petals' ),
 	) );
 	
 	$wp_customize->add_control( 'petals_block_two_heading', array(
@@ -455,6 +455,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( 'Each evening, the sun gently lowers itself down for the night, leaving some remarkable sights to enjoy.', 'petals' ),
 	) );
 	
 	$wp_customize->add_control( 'petals_block_two_text', array(
@@ -468,18 +469,20 @@ function petals_customize_register( $wp_customize ) {
 		'transport' => 'refresh',
 		'default' => 1,
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( 'Each evening, the sun gently lowers itself down for the night, leaving some remarkable sights to enjoy, and offering the chance to take some fantastic pictures.', 'petals' ),
 	) );
 	
 	$wp_customize->add_control( 'petals_block_two_cta', array(
   		'type' => 'checkbox',
   		'section' => 'petals_block_two',
-  		'label' => __( 'Display a Call-to-Action Button', 'petals' ),
+ 		'label' => __( 'Display a Call-to-Action Button', 'petals' ),
 	) );
 	
 	$wp_customize->add_setting( 'petals_block_two_cta_text', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( 'Enter your own button here', 'petals' ),
 	) );
 	
 	$wp_customize->add_control( 'petals_block_two_cta_text', array(
@@ -492,6 +495,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => '#',
 	) );
 	
 	$wp_customize->add_control( 'petals_block_two_cta_link', array(
@@ -538,6 +542,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( 'Shop', 'petals' ),
 	) );
 	
 	$wp_customize->add_control( 'petals_block_three_heading', array(
@@ -550,6 +555,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( 'Each tour concludes with a visit to the gift shop, filled with merchandise created by the local villages. Items are unique, hand-crafted and make the perfect gift for all. You can also visit our online store.', 'petals' ),
 	) );
 	
 	$wp_customize->add_control( 'petals_block_three_text', array(
@@ -575,6 +581,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( 'Purchase now!', 'petals' ),
 	) );
 	
 	$wp_customize->add_control( 'petals_block_three_cta_text', array(
@@ -587,6 +594,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => '#',
 	) );
 	
 	$wp_customize->add_control( 'petals_block_three_cta_link', array(
