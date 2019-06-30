@@ -1003,8 +1003,7 @@ a.panel-button:visited {
 }
 
 .block-two-contents-wrapper {
-	margin: auto;
-	margin-left: 0;
+	margin: auto 40px auto 0;
 }
 
 /*--------------------------------------------------------------
