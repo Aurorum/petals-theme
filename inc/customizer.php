@@ -179,7 +179,7 @@ function petals_customize_register( $wp_customize ) {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'petals_blob_colour', array(
-			'label' => 'Blob Color',
+			'label' => __( 'Blob Color', 'petals' ),
 			'section' => 'petals_frontpanel',
 			'settings' => 'petals_blob_colour',
 		) ) );
@@ -206,6 +206,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => 1,
 	) );
 	
 	$wp_customize->add_control( 'petals_display_promotion', array(
@@ -216,23 +217,25 @@ function petals_customize_register( $wp_customize ) {
 		'description' => __( 'This displays a bold panel for information to stand out to your readers' , 'petals' ),
 	) );
 
-    $wp_customize->add_setting('petals_promotion_image', array(
-        'transport'     => 'refresh',
-        'height'        => 180,
-        'width'        => 160,
-	'sanitize_callback'  => 'esc_attr',
-    ));
+    	$wp_customize->add_setting( 'petals_promotion_image', array(
+       	 	'transport'     => 'refresh',
+       	 	'height'        => 180,
+      	 	'width'        => 160,
+	 	'sanitize_callback'  => 'esc_attr',
+	 	'default' => get_template_directory_uri().'/resources/rain.png',
+  	 ));
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'petals_promotion_image', array(
-        'label' => __('Promotion Image', 'petals'),
-        'section' => 'petals_promotion',
-        'settings' => 'petals_promotion_image',
-    ))); 
+        	'label' => __( 'Promotion Image', 'petals' ),
+        	'section' => 'petals_promotion',
+        	'settings' => 'petals_promotion_image',
+    	))); 
 	
 	$wp_customize->add_setting( 'petals_promotion_heading', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( "Discover what's available", 'petals' )
 	) );
 	
 	$wp_customize->add_control( 'petals_promotion_heading', array(
@@ -245,6 +248,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( "From birds to plants, there's a world to explore", 'petals' )
 	) );
 	
 	$wp_customize->add_control( 'petals_promotion_subtitle', array(
@@ -270,6 +274,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( 'Explore now!', 'petals' ),
 	) );
 	
 	$wp_customize->add_control( 'petals_promotion_button_text', array(
@@ -282,6 +287,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => '#',
 	) );
 	
 	$wp_customize->add_control( 'petals_promotion_button_link', array(
