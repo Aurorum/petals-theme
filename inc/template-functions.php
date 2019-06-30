@@ -28,7 +28,7 @@ function petals_body_classes( $classes ) {
 	}
 	
 	// Adds a class of featured-image when there is a featured image. 
-	if ( has_post_thumbnail() ) {
+	if ( has_post_thumbnail() && petals_jetpack_featured_image_display() ) {
 		$classes[] = 'featured-image';
 	}
 	
