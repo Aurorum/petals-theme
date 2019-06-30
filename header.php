@@ -7,7 +7,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package Petals
- * TO DO: Update default images without linking to something
  */
 
 ?>
@@ -101,13 +100,13 @@
 				<img src="<?php echo get_theme_mod('petals_block_one_image'); ?>">
 			<?php endif; ?>
 			<?php if ( ! get_theme_mod( 'petals_block_one_image' ) ) : ?>
-			<img src="https://clubpenguinmountains.files.wordpress.com/2019/06/club-penguin-mountains-island-adventure-party-header.png">
+			<img src="<?php echo get_template_directory_uri().'/resources/mountains.png' ?>">
 			<?php endif; ?>
 			<div class="block-one-contents-wrapper">
-				<h2 class ="block-one-heading"> <?php echo get_theme_mod('petals_block_one_heading', __('An ocean of violets in bloom', 'petals') ); ?></h2>
-				<p class ="block-one-text"> <?php echo get_theme_mod('petals_block_one_text', __('An ocean of violets in bloom', 'petals') ); ?></p>
-				<a class="block-one-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_one_cta_link', __('Enter your own button here', 'petals' ) ); ?>">
-					<?php echo get_theme_mod('petals_block_one_cta_text', __('Enter your own button here', 'petals' ) ); ?>
+				<h2 class ="block-one-heading"> <?php echo get_theme_mod('petals_block_one_heading', __('Edit these in your Customizer', 'petals') ); ?></h2>
+				<p class ="block-one-text"> <?php echo get_theme_mod('petals_block_one_text', __('Create something beautiful that stands out to your readers using three blocks! These can be edited with great ease in your Customizer. See below for some inspiration.', 'petals') ); ?></p>
+				<a class="block-one-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_one_cta_link', '#' ); ?>">
+					<?php echo get_theme_mod('petals_block_one_cta_text', __('You can also add your own button!', 'petals' ) ); ?>
 				</a>
 			</div>
 		</div>
@@ -115,8 +114,8 @@
 	<?php if ( get_theme_mod( 'petals_display_block_two' ) == 1 ) : ?>
 		<div class="petals-block-two">
 			<div class="block-two-contents-wrapper">
-				<h2 class ="block-two-heading"> <?php echo get_theme_mod('petals_block_two_heading', __('An ocean of violets in bloom', 'petals') ); ?></h2>
-				<p class ="block-two-text"> <?php echo get_theme_mod('petals_block_two_text', __('An ocean of violets in bloom', 'petals') ); ?></p>
+				<h2 class ="block-two-heading"> <?php echo get_theme_mod('petals_block_two_heading', __('Sunsets of a Lifetime', 'petals') ); ?></h2>
+				<p class ="block-two-text"> <?php echo get_theme_mod('petals_block_two_text', __('Each evening, the sun gently lowers itself down for the night, leaving some remarkable sights to enjoy. ', 'petals') ); ?></p>
 				<a class="block-two-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_two_cta_link', __('Enter your own button here', 'petals' ) ); ?>">
 					<?php echo get_theme_mod('petals_block_two_cta_text', __('Enter your own button here', 'petals' ) ); ?>
 				</a>
@@ -125,7 +124,7 @@
 				<img src="<?php echo get_theme_mod('petals_block_two_image'); ?>">
 			<?php endif; ?>
 			<?php if ( ! get_theme_mod( 'petals_block_two_image' ) ) : ?>
-			<img src="https://clubpenguinmountains.files.wordpress.com/2019/06/club-penguin-mountains-island-adventure-party-header.png">
+			<img src="<?php echo get_template_directory_uri().'/resources/sunset.png' ?>">
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
@@ -135,13 +134,13 @@
 				<img src="<?php echo get_theme_mod('petals_block_three_image'); ?>">
 			<?php endif; ?>
 			<?php if ( ! get_theme_mod( 'petals_block_three_image' ) ) : ?>
-			<img src="https://clubpenguinmountains.files.wordpress.com/2019/06/club-penguin-mountains-island-adventure-party-header.png">
+			<img src="<?php echo get_template_directory_uri().'/resources/items.png' ?>">
 			<?php endif; ?>
 			<div class="block-three-contents-wrapper">
-				<h2 class ="block-three-heading"> <?php echo get_theme_mod('petals_block_three_heading', __('An ocean of violets in bloom', 'petals') ); ?></h2>
-				<p class ="block-three-text"> <?php echo get_theme_mod('petals_block_three_text', __('An ocean of violets in bloom', 'petals') ); ?></p>
-				<a class="block-three-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_three_cta_link', __('Enter your own button here', 'petals' ) ); ?>">
-					<?php echo get_theme_mod('petals_block_three_cta_text', __('Enter your own button here', 'petals' ) ); ?>
+				<h2 class ="block-three-heading"> <?php echo get_theme_mod('petals_block_three_heading', __('Shop', 'petals') ); ?></h2>
+				<p class ="block-three-text"> <?php echo get_theme_mod('petals_block_three_text', __('Each tour concludes with a visit to the gift shop, filled with merchandise created by the local villages. Items are unique, hand-crafted and make the perfect gift for all. You can also visit our online store.', 'petals') ); ?></p>
+				<a class="block-three-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_three_cta_link', '#'); ?>">
+					<?php echo get_theme_mod('petals_block_three_cta_text', __('Purchase now!', 'petals' ) ); ?>
 				</a>
 			</div>
 		</div>
