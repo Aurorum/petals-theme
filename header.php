@@ -105,9 +105,11 @@
 			<div class="block-one-contents-wrapper">
 				<h2 class ="block-one-heading"> <?php echo get_theme_mod('petals_block_one_heading', __('Edit these in your Customizer', 'petals') ); ?></h2>
 				<p class ="block-one-text"> <?php echo get_theme_mod('petals_block_one_text', __('Create something beautiful that stands out to your readers using three blocks! These can be edited with great ease in your Customizer. See below for some inspiration.', 'petals') ); ?></p>
+				<?php if ( get_theme_mod( 'petals_block_one_cta' ) ) : ?>
 				<a class="block-one-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_one_cta_link', '#' ); ?>">
 					<?php echo get_theme_mod('petals_block_one_cta_text', __('You can also add your own button!', 'petals' ) ); ?>
 				</a>
+				<?php endif; ?>
 			</div>
 		</div>
 	<?php endif; ?>
@@ -115,10 +117,12 @@
 		<div class="petals-block-two">
 			<div class="block-two-contents-wrapper">
 				<h2 class ="block-two-heading"> <?php echo get_theme_mod('petals_block_two_heading', __('Sunsets of a Lifetime', 'petals') ); ?></h2>
-				<p class ="block-two-text"> <?php echo get_theme_mod('petals_block_two_text', __('Each evening, the sun gently lowers itself down for the night, leaving some remarkable sights to enjoy. ', 'petals') ); ?></p>
+				<p class ="block-two-text"> <?php echo get_theme_mod('petals_block_two_text', __('Each evening, the sun gently lowers itself down for the night, leaving some remarkable sights to enjoy, and offering the chance to take some fantastic pictures. ', 'petals') ); ?></p>
+				<?php if ( get_theme_mod( 'petals_block_two_cta' ) == 1 ) : ?> 
 				<a class="block-two-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_two_cta_link', __('Enter your own button here', 'petals' ) ); ?>">
 					<?php echo get_theme_mod('petals_block_two_cta_text', __('Enter your own button here', 'petals' ) ); ?>
 				</a>
+				<?php endif; ?>
 			</div>
 			<?php if ( get_theme_mod( 'petals_block_two_image' ) ) : ?>
 				<img src="<?php echo get_theme_mod('petals_block_two_image'); ?>">
@@ -139,9 +143,11 @@
 			<div class="block-three-contents-wrapper">
 				<h2 class ="block-three-heading"> <?php echo get_theme_mod('petals_block_three_heading', __('Shop', 'petals') ); ?></h2>
 				<p class ="block-three-text"> <?php echo get_theme_mod('petals_block_three_text', __('Each tour concludes with a visit to the gift shop, filled with merchandise created by the local villages. Items are unique, hand-crafted and make the perfect gift for all. You can also visit our online store.', 'petals') ); ?></p>
+				<?php if ( get_theme_mod( 'petals_block_three_cta' ) == 1 ) : ?> 
 				<a class="block-three-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_three_cta_link', '#'); ?>">
 					<?php echo get_theme_mod('petals_block_three_cta_text', __('Purchase now!', 'petals' ) ); ?>
 				</a>
+				<?php endif; ?>
 			</div>
 		</div>
 	<?php endif; ?>
