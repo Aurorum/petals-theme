@@ -40,7 +40,7 @@ function petals_jetpack_setup() {
 			'comment'    => '.comments-link',
 		),
 		'featured-images' => array(
-			'archive'    => true,
+			'archive'    => false,
 			'post'       => true,
 			'page'       => true,
 		),
