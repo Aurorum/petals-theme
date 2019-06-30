@@ -61,3 +61,32 @@ function petals_infinite_scroll_render() {
 		endif;
 	}
 }
+
+/**
+ * Show/Hide Featured Image outside of the loop.
+ */
+function petals_jetpack_featured_image_display() {
+    if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
+        return true;
+    } else {
+        $options         = get_theme_support( 'jetpack-content-options' );
+        $featured_images = ( ! empty( $options[0]['featured-images'] ) ) ? $options[0]['featured-images'] : null;
+ 
+        $settings = array(
+            'post-default' => ( isset( $featured_images['post-default'] ) && false === $featured_images['post-default'] ) ? '' : 1,
+            'page-default' => ( isset( $featured_images['page-default'] ) && false === $featured_images['page-default'] ) ? '' : 1,
+        );
+ 
+        $settings = array_merge( $settings, array(
+            'post-option'  => get_option( 'jetpack_content_featured_images_post', $settings['post-default'] ),
+            'page-option'  => get_option( 'jetpack_content_featured_images_page', $settings['page-default'] ),
+        ) );
+ 
+        if ( ( ! $settings['post-option'] && is_single() )
+            || ( ! $settings['page-option'] && is_singular() && is_page() ) ) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+}
