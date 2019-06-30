@@ -61,7 +61,7 @@ if ( ! function_exists( 'petals_header_style' ) ) :
 			.site-title a,
 			.site-description,
 			.menu-toggle-icon {
-				fill: color: #<?php echo esc_attr( $header_text_color ); ?>;
+				fill: #<?php echo esc_attr( $header_text_color ); ?>;
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}
 		<?php endif; ?>
