@@ -469,7 +469,6 @@ function petals_customize_register( $wp_customize ) {
 		'transport' => 'refresh',
 		'default' => 1,
 		'sanitize_callback'  => 'esc_attr',
-		'default' => __( 'Each evening, the sun gently lowers itself down for the night, leaving some remarkable sights to enjoy, and offering the chance to take some fantastic pictures.', 'petals' ),
 	) );
 	
 	$wp_customize->add_control( 'petals_block_two_cta', array(
