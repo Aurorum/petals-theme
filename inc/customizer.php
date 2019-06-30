@@ -3,6 +3,7 @@
  * Petals Theme Customizer
  *
  * @package Petals
+ * TO DO: Defaults for 2/3
  */
 
 /**
@@ -212,6 +213,7 @@ function petals_customize_register( $wp_customize ) {
   		'type' => 'checkbox',
   		'section' => 'petals_promotion',
   		'label' => __( 'Display Promotion Panel', 'petals' ),
+		'default' => 1,
 		'description' => __( 'This displays a bold panel for information to stand out to your readers' , 'petals' ),
 	) );
 
@@ -314,6 +316,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => 1,
 	) );
 	
 	$wp_customize->add_control( 'petals_display_block_one', array(
@@ -328,6 +331,7 @@ function petals_customize_register( $wp_customize ) {
      	   	'height'        => 400,
      	   	'width'        => 600,
 	   	'sanitize_callback'  => 'esc_attr',
+		'default' => get_template_directory_uri().'/resources/mountains.png',
   	 ));
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'petals_block_one_image', array(
@@ -340,6 +344,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( 'Edit these in your Customizer', 'petals' )
 	) );
 	
 	$wp_customize->add_control( 'petals_block_one_heading', array(
@@ -352,6 +357,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( 'Create something beautiful that stands out to your readers using three blocks! These can be edited with great ease in your Customizer. See below for some inspiration', 'petals' ) 
 	) );
 	
 	$wp_customize->add_control( 'petals_block_one_text', array(
@@ -377,6 +383,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => __( 'You can also add your own button!', 'petals' ) 
 	) );
 	
 	$wp_customize->add_control( 'petals_block_one_cta_text', array(
@@ -389,6 +396,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => '#',
 	) );
 	
 	$wp_customize->add_control( 'petals_block_one_cta_link', array(
@@ -407,6 +415,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => 1,
 	) );
 	
 	$wp_customize->add_control( 'petals_display_block_two', array(
@@ -421,6 +430,7 @@ function petals_customize_register( $wp_customize ) {
      	   	'height'        => 400,
      	   	'width'        => 600,
 	   	'sanitize_callback'  => 'esc_attr',
+		 'default' => get_template_directory_uri().'/resources/sunset.png',
   	 ));
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'petals_block_two_image', array(
@@ -500,6 +510,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'esc_attr',
+		'default' => 1,
 	) );
 	
 	$wp_customize->add_control( 'petals_display_block_three', array(
@@ -514,6 +525,7 @@ function petals_customize_register( $wp_customize ) {
      	   	'height'        => 400,
      	   	'width'        => 600,
 	   	'sanitize_callback'  => 'esc_attr',
+		'default' => get_template_directory_uri().'/resources/items.png',
   	 ));
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'petals_block_three_image', array(
