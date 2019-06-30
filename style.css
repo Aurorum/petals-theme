@@ -1195,6 +1195,7 @@ article {
 
 .featured-image .post-thumbnail {
 	height: 400px;
+	margin-top: -20px;
 }
 
 .post-thumbnail:nth-child(2) {
