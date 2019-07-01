@@ -41,6 +41,11 @@ if ( ! function_exists( 'petals_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		
+		/*
+		 * Enable support for full and wide content.
+		 */
+		add_theme_support( 'align-wide' );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
