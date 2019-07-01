@@ -995,7 +995,11 @@ a.panel-button:visited {
 
 .block-one-contents-wrapper,
 .block-three-contents-wrapper {
-	margin: auto 80px auto 40px;
+	background-color: #fff;
+	margin: auto 80px auto -40px;
+	padding: 20px;
+	position: relative;
+	z-index: 1;
 }
 
 .petals-block-two {
@@ -1003,7 +1007,11 @@ a.panel-button:visited {
 }
 
 .block-two-contents-wrapper {
-	margin: auto 40px auto 0;
+	background-color: #fff;
+	margin: auto -40px auto 20px;
+	padding: 20px;
+	position: relative;
+	z-index: 1;
 }
 
 /*--------------------------------------------------------------
