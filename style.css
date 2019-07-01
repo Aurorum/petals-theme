@@ -785,23 +785,9 @@ a:hover, a:active {
 	width: 100%;
 }
 
-@keyframes rotateHamburger {
-	0% {
-		transform: scale(1.5);
-	}
-	
-	99% {
-		transform: rotate(90deg) scale(1.5);
-	}
-	
-	100% {
-		transform: rotate(90deg) scale(1.5);
-	}
-}
-
 .main-navigation.toggled .menu-toggle-icon {
-	-webkit-animation: rotateHamburger 0.8s forwards;
-	animation: rotateHamburger 0.8s forwards;
+	transition: 0.8s;
+	transform: rotate(90deg) scale(1.5);
 }
 
 /*--------------------------------------------------------------
@@ -1250,6 +1236,10 @@ article {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+
+.comments-area ol.children {
+	list-style: none;
+}
 
 .comment-list {
 	margin-left: 18px;
