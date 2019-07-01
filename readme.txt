@@ -1,6 +1,6 @@
 === Milkshake ===
 Contributors: torres126
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, featured-images, featured-image-header, flexible-header, theme-options, custom-header, custom-logo, custom-menu, sticky-post, threaded-comments, translation-ready, blog
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, featured-images, featured-image-header, flexible-header, theme-options, custom-header, custom-logo, custom-menu, sticky-post, threaded-comments, translation-ready, theme-options, portfolio, blog
 Requires at least: 4.5
 Tested up to: 5.1
 Requires PHP: 5.2
@@ -30,8 +30,8 @@ Petals includes support for Jetpack's Infinite Scrolling, Social Menu, and Conte
 
 == Changelog ==
 
-= 1.1 - July ?? 2019 =
-* Add support for the Jetpack Social Menu
+= 1.1 - July 01 2019 =
+* Add support for Jetpack's Social Menu and Content Options
 * Centralise Customizer panels under "Theme Options"
 * Offer option to create "Blocks" for content emphasis 
 * Comment improvements: distinguish more clearly the difference between an author comment and improve styling
@@ -51,4 +51,4 @@ Milkshake WordPress Theme, Copyright 2019 torres126/Aurorum - distributed under 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 * Montserrat font https://github.com/google/fonts, licensed under [SIL Open Font License](https://scripts.sil.org/OFL)
-* Demo screenshot exclusively uses photos taken by theme developers, (C) Aurorum, licensed under CC0
+* Demo screenshot, and photos within the theme, exclusively use photos taken by theme developers, (C) Aurorum, licensed under CC0
