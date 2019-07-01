@@ -82,11 +82,11 @@
 	<div class="petals-promotion">
 		<div class="promotion-image centrebg" style="background-image: url(<?php echo get_theme_mod('petals_promotion_image'); ?>)">
 			<div class="promotion-text">
-			<h1 class="promotion-title"> <?php echo get_theme_mod('petals_promotion_heading', __('Enter your own title here', 'petals') ); ?> </h1>
-			<h3 class ="promotion-subtitle"> <?php echo get_theme_mod('petals_promotion_subtitle', __('Enter your own subtitle here', 'petals') ); ?> </h3>
-					<?php if ( get_theme_mod( 'petals_promotion_button' ) == 1 ) : ?> 
-			<a class="promotion-button panel-button" href="<?php echo get_theme_mod('petals_promotion_button_link', __('Enter your own button here', 'petals' ) ); ?>">
-					<?php echo get_theme_mod('petals_promotion_button_text', __('Enter your own button here', 'petals' ) ); ?>
+			<h1 class="promotion-title"> <?php echo get_theme_mod('petals_promotion_heading', __('Discover what\'s available', 'petals') ); ?> </h1>
+			<h3 class ="promotion-subtitle"> <?php echo get_theme_mod('petals_promotion_subtitle', __('From birds to plants, there\'s a world to explore', 'petals') ); ?> </h3>
+					<?php if ( get_theme_mod( 'petals_promotion_button', 1 ) == 1 ) : ?> 
+			<a class="promotion-button panel-button" href="<?php echo get_theme_mod('petals_promotion_button_link', '#' ); ?>">
+					<?php echo get_theme_mod('petals_promotion_button_text', __('Explore now!', 'petals' ) ); ?>
 			</a>
 			<?php endif; ?>
 			</div>
