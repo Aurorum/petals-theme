@@ -39,6 +39,7 @@ Petals includes support for Jetpack's Infinite Scrolling, Social Menu, and Conte
 * Prevent distorted layout in the Customizer when toggling the display of the site title and description
 * Provide wide width and full width block alignment options
 * Let the immediate activation of the theme result in text and colours which are similar to that of the theme's screenshot
+* Introduce a new "hamburger" icon 
 * Minor bug fixes and improvements
 * Improve organisation of styling
 
@@ -47,7 +48,8 @@ Petals includes support for Jetpack's Infinite Scrolling, Social Menu, and Conte
 
 == Credits ==
 
-Milkshake WordPress Theme, Copyright 2019 torres126/Aurorum - distributed under the terms of the GNU GPL
+Petals WordPress Theme, Copyright 2019 torres126/Aurorum 
+Petals distributed under the terms of the GNU GPL
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
