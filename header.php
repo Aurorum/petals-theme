@@ -80,7 +80,12 @@
 	</header><!-- #masthead -->
 	<?php if  ( get_theme_mod( 'petals_display_promotion', 1 ) == 1 )  : ?>
 	<div class="petals-promotion">
+		<?php if ( get_theme_mod( 'petals_promotion_image' ) ) : ?>
 		<div class="promotion-image centrebg" style="background-image: url(<?php echo get_theme_mod('petals_promotion_image'); ?>)">
+		<?php endif; ?>
+		<?php if ( ! get_theme_mod( 'petals_promotion_image' ) ) : ?>
+		<div class="promotion-image centrebg" style="background-image: url(<?php echo get_template_directory_uri().'/resources/rain.png' ?>)">
+		<?php endif; ?>
 			<div class="promotion-text">
 			<h1 class="promotion-title"> <?php echo get_theme_mod('petals_promotion_heading', __('Discover what\'s available', 'petals') ); ?> </h1>
 			<h3 class ="promotion-subtitle"> <?php echo get_theme_mod('petals_promotion_subtitle', __('From birds to plants, there\'s a world to explore', 'petals') ); ?> </h3>
