@@ -412,11 +412,14 @@ p {
 	margin-bottom: 1.5em;
 }
 
-dfn, cite, em, i {
+dfn, cite, em, i, blockquote {
 	font-style: italic;
 }
 
 blockquote {
+	background-color: #eee;
+	border-left: 2px solid #afacac;
+	padding: 10px 20px;
 	margin: 0 1.5em;
 }
 
