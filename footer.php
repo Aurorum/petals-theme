@@ -27,6 +27,11 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'petals' ), 'petals', '<a href="https://github.com/Aurorum/petals-theme/">Aurorum</a>' );
 				?>
 		</div><!-- .site-info -->
+		<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
+			<div class="footer-sidebar">
+				<?php dynamic_sidebar( 'footer-1' ); ?>
+			</div>
+		<?php endif;?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
