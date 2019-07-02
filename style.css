@@ -12,7 +12,7 @@ Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Petals is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Petals is based on Underscores https://underscores.me/, (C) 2012-2019 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -398,7 +398,6 @@ select,
 optgroup,
 textarea {
 	color: #757272; /* Pass contrast standards */
-	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -409,7 +408,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
+	font-weight: 100;
 	margin-bottom: 1.5em;
+}
+
+h5, h6, p, blockquote {
+	font-family: 'Hind', sans-serif;
+	letter-spacing: 0.1px;
 }
 
 dfn, cite, em, i, blockquote {
@@ -475,6 +480,7 @@ html {
 body {
 	background: #fff;
 	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 0.2px;
 }
 
 hr {
