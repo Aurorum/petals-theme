@@ -1,6 +1,6 @@
 === Petals ===
 Contributors: torres126
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, featured-images, featured-image-header, flexible-header, theme-options, custom-header, custom-logo, custom-menu, sticky-post, threaded-comments, translation-ready, wide-blocks, theme-options, portfolio, blog
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, featured-images, featured-image-header, flexible-header, footer-widgets, theme-options, custom-header, custom-logo, custom-menu, sticky-post, threaded-comments, translation-ready, wide-blocks, theme-options, portfolio, blog
 Requires at least: 4.5
 Tested up to: 5.1
 Requires PHP: 5.2
@@ -39,6 +39,7 @@ Petals includes support for Jetpack's Infinite Scrolling, Social Menu, and Conte
 * Prevent distorted layout in the Customizer when toggling the display of the site title and description
 * Provide wide width and full width block alignment options
 * Let the immediate activation of the theme result in text and colours which are similar to that of the theme's screenshot
+* Support footer widgets
 * Introduce a new "hamburger" icon 
 * Minor bug fixes and improvements
 * Improve organisation of styling
