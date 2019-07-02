@@ -118,6 +118,17 @@ function petals_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer', 'petals' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Displayed at the bottom of the screen.', 'petals' ),
+		'before_widget' => '<section id="%1$s" class="%2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	
 }
 add_action( 'widgets_init', 'petals_widgets_init' );
 
