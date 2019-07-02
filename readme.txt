@@ -54,5 +54,5 @@ Petals distributed under the terms of the GNU GPL
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
-* Montserrat font https://github.com/google/fonts, licensed under [SIL Open Font License](https://scripts.sil.org/OFL)
+* Montserrat and Hind fonts https://github.com/google/fonts, licensed under [SIL Open Font License](https://scripts.sil.org/OFL)
 * Demo screenshot, and photos within the theme, exclusively use photos taken by theme developers, (C) Aurorum, licensed under CC0
