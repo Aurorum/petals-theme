@@ -174,7 +174,7 @@ function petals_customize_register( $wp_customize ) {
 
 	if ( get_theme_mod( 'petals_panel_header' ) == 0 ) {
 		$wp_customize->add_setting( 'petals_blob_colour', array(
-			'default' => '#39732c',
+			'default' => '#EF6079FF',
 			'sanitize_callback'  => 'esc_attr',
 		) );
 
