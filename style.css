@@ -846,8 +846,9 @@ a:hover, a:active {
 }
 
 .promotion-image {
-	display: flex;
+	background-attachment: fixed;
 	background-color: #000;
+	display: flex;
 	height: 350px;
 }
 
