@@ -2,17 +2,17 @@
 Theme Name: Petals
 Theme URI: https://github.com/Aurorum/petals-theme
 Author: Aurorum
-Description: Petals is a landing-style theme designed to entice your readers, but also created to be simple to set up in the Customizer, allowing your site to make a bold impact.
-Version: 1.0.0
+Description: Petals is a landing-style theme designed to entice your readers, whilst also being simple to set up in the Customizer. Allowing your site to make a bold impact with a variety of options including a different header design, Petals empowers your website with options to enhance your dream. 
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: petals
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, featured-images, featured-image-header, flexible-header, theme-options, custom-header, custom-logo, custom-menu, sticky-post, threaded-comments, translation-ready, blog
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, featured-images, featured-image-header, flexible-header, footer-widgets, custom-header, custom-logo, custom-menu, sticky-post, threaded-comments, translation-ready, wide-blocks, theme-options, portfolio, blog
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Petals is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Petals is based on Underscores https://underscores.me/, (C) 2012-2019 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -28,6 +28,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Navigation
 	## Links
 	## Menus
+# Header and Panels
+# Front Page Blocks
 # Accessibility
 # Alignments
 # Clearings
@@ -396,7 +398,6 @@ select,
 optgroup,
 textarea {
 	color: #757272; /* Pass contrast standards */
-	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -407,14 +408,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
+	font-weight: 100;
 	margin-bottom: 1.5em;
 }
 
-dfn, cite, em, i {
+h5, h6, p, blockquote {
+	font-family: 'Hind', sans-serif;
+	letter-spacing: 0.1px;
+}
+
+dfn, cite, em, i, blockquote {
 	font-style: italic;
 }
 
 blockquote {
+	background-color: #eee;
+	border-left: 2px solid #afacac;
+	padding: 10px 20px;
 	margin: 0 1.5em;
 }
 
@@ -470,6 +480,7 @@ html {
 body {
 	background: #fff;
 	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 0.2px;
 }
 
 hr {
@@ -632,11 +643,6 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-## Header
---------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
 
@@ -650,145 +656,14 @@ a:hover, a:active {
 	width: 100%;
 }
 
-.custom-logo-link img {
-	position: absolute;
-	left: 0;
-	height: 120px;
-	width: 120px;
-	top: 120px;
-}
-
-.front-panel > * {
-	margin-bottom: 0;
-}
-
 .menu-title {
 	display: none;
 	float: left;
 }
 
-.front-panel-blob {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin-right: 280px;
-}
-
-.customize-partial-edit-shortcuts-shown .front-panel-blob {
-	margin-right: 200px;
-}
-
-@media only screen and (max-width: 1800px) {
-	.front-panel-blob {
-		display: none;
-	}
-}
-
-.site-description {
-	position: relative;
-	top: 10px;
-	margin-right: 20px;
-	text-align: right;
-}
-
-.main-navigation {
-	position: relative;
-	z-index: 2;
-}
-
-.bottom-panel-text {
-	margin-bottom: 32px;
-}
-
-.panel-button {
-	padding: 20px 65px;
-}
-
-.centrebg {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.promotion-image {
-	background-color: #000;
-	height: 350px;
-}
-
-.front-panel-wrapper {
-	height: 700px;
-	width: 100%;
-}
-
-.full-header .site-description,
-.full-header .custom-header,
-.full-header .front-panel-blob {
-	display: none;
-}
-
-.promotion-text {
-	color: white;
-	text-align: center; 
-	padding-top: 50px;
-}
-
-.promotion-title {
-	font-size: 42px;
-	margin-top: 0;
-	margin-bottom: 8px;
-}
-
-.promotion-subtitle {
-	margin-top: 0;
-	margin-bottom: 32px;
-}
-
-a.panel-button,
-a.panel-button:active,
-a.panel-button:visited {
-	color: white;
-}
-
 .menu {
 	float: right;
 	margin-top: 10px;
-}
-
-.site-branding {
-	float: left;
-}
-
-.site-branding h1 {
-	font-size: 28px;
-	margin: 0;
-	margin-left: 50px;
-}
-
-.front-panel {
-	margin-top: 200px;
-	width: 50%;
-	text-align: center;
-	float: left;
-}
-
-.small-panel-text {
-	margin: 0;
-	margin-right: 120px;
-	font-size: 14px;
-	font-style: italic;
-	font-weight: 300;
-}
-
-.custom-header {
-	float: right;
-	height: 700px;
-	max-width: 50%;
-	position: relative;
-}
-
-.custom-logo-link a {
-	display: inline-block;
-	width: 100px;
 }
 
 .main-navigation .children {
@@ -805,9 +680,12 @@ a.panel-button:visited {
 }
 
 .main-navigation ul {
-	display: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 	list-style: none;
 	margin: 0;
+	justify-content: center;
 	padding-left: 0;
 }
 
@@ -865,19 +743,12 @@ a.panel-button:visited {
 	visibility: visible;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+.jetpack-social-navigation {
+	font-size: 26px;
+	float: left;
+	height: 0;
+	margin-top: 30px;
+	margin-left: 20px;
 }
 
 .site-main .comment-navigation, .site-main
@@ -902,17 +773,249 @@ a.panel-button:visited {
 	width: 50%;
 }
 
+.menu-toggle {
+	background: transparent;
+	border: 0;
+	display: none;
+	padding: 0;
+	height: 0;
+}
+
+.menu-toggle-icon {
+	margin-top: 10px;
+	margin-right: 20px;
+	right: 0;
+	fill: #EF6079FF;
+	height: 24px;
+	width: 24px;
+	position: absolute;
+	transform: scale(1.5);
+}
+
+.main-navigation.toggled .menu li {
+	text-align: center;
+	padding-top: 8px;
+	width: 100%;
+}
+
+.main-navigation.toggled .menu-toggle-icon {
+	transition: 0.8s;
+	transform: rotate(90deg) scale(1.5);
+}
+
+.main-navigation.toggled .main-navigation li {
+	float: left;
+}
+
+/*--------------------------------------------------------------
+# Header and Panels
+--------------------------------------------------------------*/
+
+.front-panel > * {
+	margin-bottom: 0;
+}
+
+.front-panel-blob {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-right: 280px;
+}
+
+@media only screen and (max-width: 1800px) {
+	.front-panel-blob {
+		display: none;
+	}
+}
+
+.customize-partial-edit-shortcuts-shown .front-panel-blob {
+	display: block;
+	margin-right: 200px;
+}
+
+.site-description {
+	position: relative;
+	top: 10px;
+	margin-right: 20px;
+	text-align: right;
+}
+
+.main-navigation {
+	position: relative;
+	z-index: 2;
+}
+
+.bottom-panel-text {
+	margin-bottom: 32px;
+}
+
+.panel-button {
+	padding: 20px 65px;
+}
+
+.centrebg {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.promotion-image {
+	background-attachment: fixed;
+	background-color: #000;
+	display: flex;
+	height: 350px;
+}
+
+.front-panel-wrapper {
+	height: 700px;
+	width: 100%;
+}
+
+.full-header .site-description,
+.full-header .custom-header,
+.full-header .front-panel-blob {
+	display: none;
+}
+
+.promotion-text {
+	color: #fff;
+	margin: auto;
+	text-align: center; 
+}
+
+.promotion-title {
+	font-size: 42px;
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+.promotion-subtitle {
+	margin-top: 0;
+	margin-bottom: 32px;
+}
+
+a.panel-button,
+a.panel-button:active,
+a.panel-button:visited {
+	display: inline-block;
+	color: #fff;
+}
+
+.site-branding {
+	float: left;
+}
+
+.site-branding h1 {
+	font-size: 28px;
+	margin: 0;
+	margin-left: 50px;
+}
+
+.front-panel {
+	margin-top: 200px;
+	width: 50%;
+	text-align: center;
+	float: left;
+}
+
+.small-panel-text {
+	margin: 0;
+	margin-right: 120px;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 300;
+}
+
+.custom-header {
+	float: right;
+	height: 700px;
+	max-width: 50%;
+	position: relative;
+}
+
+.custom-logo-link a {
+	display: inline-block;
+	width: 100px;
+}
+
+.custom-logo-link img {
+	position: absolute;
+	left: 0;
+	height: 120px;
+	width: 120px;
+	top: 120px;
+}
+
 .bold-header .main-navigation {
 	background-color: rgba(255,255,255, 0.85);
 }
 
 .bold-header .front-panel {
 	background-color: rgba(255,255,255, 0.85);
-	color: black;
+	color: #000;
 	margin-top: 180px;
 	padding-top: 40px; 
 	padding-bottom: 80px;
 	transform: translateX(50%);
+}
+
+/*--------------------------------------------------------------
+# Front Page Blocks
+--------------------------------------------------------------*/
+.petals-block-wrapper {
+	margin-top: 24px;
+	margin-left: 5%;
+}
+
+.petals-block-wrapper h2 {
+	margin: 0;
+}
+
+.petals-block-wrapper .panel-button {
+	padding: 12px;
+}
+
+.petals-block-wrapper img {
+	height: 400px;
+	width: 600px;
+	-webkit-transition: 1.5s;
+	transition: 1.5s;
+}
+
+.petals-block-wrapper img:hover {
+	transform: rotate(-4deg);
+}
+
+.petals-block-two img:hover {
+	transform: rotate(4deg);
+}
+
+.petals-block-one,
+.petals-block-two,
+.petals-block-three {
+	display: flex;
+	margin-bottom: 60px;
+}
+
+.block-one-contents-wrapper,
+.block-three-contents-wrapper {
+	background-color: #fff;
+	margin: auto 80px auto -40px;
+	padding: 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.petals-block-two {
+	margin-right: 140px;
+}
+
+.block-two-contents-wrapper {
+	background-color: #fff;
+	margin: auto -40px auto 20px;
+	padding: 20px;
+	position: relative;
+	z-index: 1;
 }
 
 /*--------------------------------------------------------------
@@ -981,6 +1084,20 @@ a.panel-button:visited {
 	margin-right: auto;
 }
 
+.alignfull, 
+.alignwide {
+	margin-right: -20px;
+	margin-left: -20px;
+	max-width: none;
+	min-width: 100%;
+	width: auto;
+}
+
+.alignwide {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
@@ -1014,19 +1131,35 @@ a.panel-button:visited {
 # Widgets
 --------------------------------------------------------------*/
 
+.widget {
+	margin: 0 0 1.5em;
+}
+
+.widget ul {
+	margin-left: 20px;
+}
+
 .widget-area {
 	float: right;
 	margin-top: 12px;
 	margin-right: 20px;
 	max-width: calc(25% - 20px);
-}
-
-.widget {
-	margin: 0 0 1.5em;
+	width: 100%;
 }
 
 .widget select {
 	max-width: 100%;
+}
+
+.footer-sidebar {
+	background-color: #000;
+	color: #fff;
+	padding: 5px;
+	text-align: center;
+}
+
+.footer-sidebar .widget-title {
+	margin: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1099,6 +1232,7 @@ article {
 
 .featured-image .post-thumbnail {
 	height: 400px;
+	margin-top: -20px;
 }
 
 .post-thumbnail:nth-child(2) {
@@ -1146,6 +1280,10 @@ article {
 ## Comments
 --------------------------------------------------------------*/
 
+.comments-area ol.children {
+	list-style: none;
+}
+
 .comment-list {
 	margin-left: 18px;
 	padding: 0;
@@ -1187,7 +1325,14 @@ article {
 	text-align: center;
 }
 
-.bypostauthor {
+.comment-edit-link {
+	margin-left: 8px;
+	text-decoration: underline;
+}
+
+.comment.bypostauthor .comment-body {
+	background-color: #e8e2e2;
+	color: #676565;
 	display: block;
 }
 
@@ -1222,6 +1367,12 @@ article {
 embed,
 iframe,
 object {
+	max-width: 100%;
+}
+
+/* This shouldn't really be necessary for a theme to style
+   It probably can be removed some point in the future */
+.wp-block-embed-facebook span {
 	max-width: 100%;
 }
 
@@ -1313,15 +1464,45 @@ object {
 	.content-area {
 		margin-right: 20px;
 		margin-left: 20px;
-		max-width: none;
+		max-width: calc(100% - 40px);
+		width: 100%;
 	}
+	
+	.petals-block-wrapper {
+		margin: auto;
+	}
+	
+	.petals-block-wrapper img {
+		order: 1;
+		margin-bottom: 6px;
+		width: 100%;
+	}
+	
+	.petals-block-wrapper img:hover {
+		transform: none;
+	}
+	
+	.petals-block-one, 
+	.petals-block-two, 
+	.petals-block-three {
+		margin: auto;
+		margin-bottom: 50px;
+		flex-direction: column;
+	}
+	
+	.block-one-contents-wrapper, 
+	.block-two-contents-wrapper, 
+	.block-three-contents-wrapper {
+		order: 2;
+		margin: auto;
+		text-align: center;
+	}	
 }
 
 @media screen and (max-width: 425px) {
 	
 	.site-branding h1 {
 		margin-left: 0;
-		text-align: center;
 	}
 	
 	.custom-header {
@@ -1335,15 +1516,27 @@ object {
 		width: 100%;
 	}
 	
+	.main-navigation ul {
+		display: none;
+	}
+	
+	.main-navigation.toggled ul,
 	.menu-toggle {
-		position: absolute; 
-		right: 50%;
-		transform: translateX(50%);
+		display: block;
 	}
 	
 	.site-description,
 	.small-panel-text {
 		margin-right: 0;
 		text-align: center; 
+	}
+	
+	.featured-image.page .entry-title {
+		background-color: rgba(255, 255, 255, 0.85);
+		color: #5f5c5c;
+		right: 50%;
+		text-align: center;
+		transform: translateX(50%);
+		width: 100%;
 	}
 }

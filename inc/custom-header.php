@@ -55,11 +55,13 @@ if ( ! function_exists( 'petals_header_style' ) ) :
 				clip: rect(1px, 1px, 1px, 1px);
 			}
 		<?php
-		// If the user has set a custom color for the text use that.
+		// If the user has set a custom colour for the text, use that.
 		else :
 			?>
 			.site-title a,
-			.site-description {
+			.site-description,
+			.menu-toggle-icon {
+				fill: #<?php echo esc_attr( $header_text_color ); ?>;
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}
 		<?php endif; ?>

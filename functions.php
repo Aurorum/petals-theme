@@ -41,6 +41,11 @@ if ( ! function_exists( 'petals_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		
+		/*
+		 * Enable support for full and wide content.
+		 */
+		add_theme_support( 'align-wide' );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -113,6 +118,17 @@ function petals_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer', 'petals' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Displayed at the bottom of the screen.', 'petals' ),
+		'before_widget' => '<section id="%1$s" class="%2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	
 }
 add_action( 'widgets_init', 'petals_widgets_init' );
 
@@ -171,7 +187,7 @@ function petals_scripts() {
 
 	wp_enqueue_script( 'petals-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	
-	wp_enqueue_style( 'petals-fonts', '//fonts.googleapis.com/css?family=Roboto|Montserrat');
+	wp_enqueue_style( 'petals-fonts', '//fonts.googleapis.com/css?family=Hind|Montserrat');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

@@ -17,7 +17,8 @@ body {
 .content-area,
 .site-branding,
 .front-panel,
-.menu-title {
+.menu-title,
+.jetpack-social-navigation {
 	float: right;
 }
 
@@ -28,6 +29,10 @@ body {
 
 .site-description {
 	text-align: left;
+}
+
+.jetpack-social-navigation {
+	margin-right: 20px;
 }
 
 .site-description {

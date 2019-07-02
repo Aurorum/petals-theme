@@ -8,8 +8,9 @@
  */
 
 get_header();
-get_the_post_thumbnail();
 ?>
+	<div class="post-thumbnail centrebg" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+	</div>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
