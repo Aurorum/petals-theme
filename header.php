@@ -63,12 +63,12 @@
   </g>
 </svg>
 	<?php endif; ?>
-			<h6 class="small-panel-text"> <?php echo get_theme_mod('petals_small_text', __('This can be edited from your Customizer', 'petals') ); ?> </h6>
-			<h1 class="top-panel-text"> <?php echo get_theme_mod('petals_top_text', __('Wildlife & Floral Exhibition', 'petals') ); ?> </h1>
-			<h3 class ="bottom-panel-text"> <?php echo get_theme_mod('petals_bottom_text', __('Members Exclusive', 'petals') ); ?> </h3>
+			<h6 class="small-panel-text"> <?php echo esc_attr( get_theme_mod('petals_small_text', __('This can be edited from your Customizer', 'petals') ) ); ?> </h6>
+			<h1 class="top-panel-text"> <?php echo esc_attr( get_theme_mod('petals_top_text', __('Wildlife & Floral Exhibition', 'petals') ) ); ?> </h1>
+			<h3 class ="bottom-panel-text"> <?php echo esc_attr( get_theme_mod('petals_bottom_text', __('Members Exclusive', 'petals') ) ); ?> </h3>
 			<?php if ( get_theme_mod( 'petals_panel_button' ) == 1 ) : ?> 
-			<a class="panel-button button" href="<?php echo get_theme_mod('petals_panel_buttonlink', __('Enter your own button here', 'petals') ); ?>">
-					<?php echo get_theme_mod('petals_panel_buttontext', __('Enter your own button here', 'petals') ); ?>
+			<a class="panel-button button" href="<?php echo esc_attr( get_theme_mod('petals_panel_buttonlink', __('Enter your own button here', 'petals') ) ); ?>">
+					<?php echo esc_attr( get_theme_mod('petals_panel_buttontext', __('Enter your own button here', 'petals') ) ); ?>
 			</a>
 			<?php endif; ?>
 			</div>
@@ -82,17 +82,17 @@
 	<?php if  ( get_theme_mod( 'petals_display_promotion', 1 ) == 1 )  : ?>
 	<div class="petals-promotion">
 		<?php if ( get_theme_mod( 'petals_promotion_image' ) ) : ?>
-		<div class="promotion-image centrebg" style="background-image: url(<?php echo get_theme_mod('petals_promotion_image'); ?>)">
+		<div class="promotion-image centrebg" style="background-image: url(<?php echo esc_url( get_theme_mod('petals_promotion_image') ); ?>)">
 		<?php endif; ?>
 		<?php if ( ! get_theme_mod( 'petals_promotion_image' ) ) : ?>
-		<div class="promotion-image centrebg" style="background-image: url(<?php echo get_template_directory_uri().'/resources/rain.png' ?>)">
+		<div class="promotion-image centrebg" style="background-image: url(<?php echo esc_url( get_template_directory_uri().'/resources/rain.png' ) ?>) ">
 		<?php endif; ?>
 			<div class="promotion-text">
-			<h1 class="promotion-title"> <?php echo get_theme_mod('petals_promotion_heading', __('Discover what\'s available', 'petals') ); ?> </h1>
-			<h3 class ="promotion-subtitle"> <?php echo get_theme_mod('petals_promotion_subtitle', __('From birds to plants, there\'s a world to explore', 'petals') ); ?> </h3>
+			<h1 class="promotion-title"> <?php echo esc_attr( get_theme_mod('petals_promotion_heading', __('Discover what\'s available', 'petals') ) ); ?> </h1>
+			<h3 class ="promotion-subtitle"> <?php echo esc_attr( get_theme_mod('petals_promotion_subtitle', __('From birds to plants, there\'s a world to explore', 'petals') ) ); ?> </h3>
 					<?php if ( get_theme_mod( 'petals_promotion_button', 1 ) == 1 ) : ?> 
-			<a class="promotion-button panel-button" href="<?php echo get_theme_mod('petals_promotion_button_link', '#' ); ?>">
-					<?php echo get_theme_mod('petals_promotion_button_text', __('Explore now!', 'petals' ) ); ?>
+			<a class="promotion-button panel-button" href="<?php echo esc_url( get_theme_mod('petals_promotion_button_link', '#' ) ); ?>">
+					<?php echo esc_attr( get_theme_mod('petals_promotion_button_text', __('Explore now!', 'petals' ) ) ); ?>
 			</a>
 			<?php endif; ?>
 			</div>
@@ -103,17 +103,17 @@
 	<?php if ( get_theme_mod( 'petals_display_block_one', 1 ) == 1 ) : ?>
 		<div class="petals-block-one">
 			<?php if ( get_theme_mod( 'petals_block_one_image' ) ) : ?>
-				<img src="<?php echo get_theme_mod('petals_block_one_image'); ?>">
+				<img src="<?php echo esc_url( get_theme_mod('petals_block_one_image') ); ?>">
 			<?php endif; ?>
 			<?php if ( ! get_theme_mod( 'petals_block_one_image' ) ) : ?>
-			<img src="<?php echo get_template_directory_uri().'/resources/mountains.png' ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri().'/resources/mountains.png' ) ?>">
 			<?php endif; ?>
 			<div class="block-one-contents-wrapper">
-				<h2 class ="block-one-heading"> <?php echo get_theme_mod('petals_block_one_heading', __('Edit these in your Customizer', 'petals') ); ?></h2>
-				<p class ="block-one-text"> <?php echo get_theme_mod('petals_block_one_text', __('Create something beautiful that stands out to your readers using three blocks! These can be edited with great ease in your Customizer. See below for some inspiration.', 'petals') ); ?></p>
+				<h2 class ="block-one-heading"> <?php echo esc_attr( get_theme_mod('petals_block_one_heading', __('Edit these in your Customizer', 'petals') ) ); ?></h2>
+				<p class ="block-one-text"> <?php echo esc_attr( get_theme_mod('petals_block_one_text', __('Create something beautiful that stands out to your readers using three blocks! These can be edited with great ease in your Customizer. See below for some inspiration.', 'petals') ) ); ?></p>
 				<?php if ( get_theme_mod( 'petals_block_one_cta', 1 ) ) : ?>
-				<a class="block-one-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_one_cta_link', '#' ); ?>">
-					<?php echo get_theme_mod('petals_block_one_cta_text', __('You can also add your own button!', 'petals' ) ); ?>
+				<a class="block-one-button promotion-button panel-button" href="<?php echo esc_url( get_theme_mod('petals_block_one_cta_link', '#' ) ); ?>">
+					<?php echo esc_attr( get_theme_mod('petals_block_one_cta_text', __('You can also add your own button!', 'petals' ) ) ); ?>
 				</a>
 				<?php endif; ?>
 			</div>
