@@ -31,6 +31,7 @@ Petals includes support for Jetpack's Infinite Scrolling, Social Menu, and Conte
 == Changelog ==
 
 = 1.2 - July 22 2019 =
+* Adds alt tags for Featured Images
 * Call the new wp_body_open function
 * Ensure that the Header Text Colour automatically updates in the Customizer when changed, without the need to refresh
 * Prevent a fatal error for users visiting a page with a Featured Image on a site without Jetpack
