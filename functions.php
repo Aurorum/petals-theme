@@ -141,35 +141,35 @@ function petals_custom_colours() {
 		<style type="text/css">
 			
 			#masthead {
-				background-color: <?php echo get_theme_mod( 'petals_panel_colour' ); ?>;
+				background-color: <?php echo esc_attr( get_theme_mod( 'petals_panel_colour' ) ); ?>;
 			}
 			
 			.front-panel-blob path {
-				fill: <?php echo get_theme_mod( 'petals_blob_colour' ); ?>;
+				fill: <?php echo esc_attr( get_theme_mod( 'petals_blob_colour' ) ); ?>;
 			}
 			
 			.custom-header,
 			.bold-header .front-panel-wrapper {
 				margin-bottom: 20px;
-				margin-bottom: <?php echo get_theme_mod( 'petals_promotion_spacing' ); ?>px;
+				margin-bottom: <?php echo esc_attr( get_theme_mod( 'petals_promotion_spacing' ) ); ?>px;
 			}
 			
 			.panel-button {
 				background-color: #c74359;
-				background-color: <?php echo get_theme_mod( 'petals_button_colour' ); ?>;
+				background-color: <?php echo esc_attr( get_theme_mod( 'petals_button_colour' ) ); ?>;
 			}
 			
 			a {
 				color: #EF6079FF;
-				color: <?php echo get_theme_mod( 'petals_link_colour' ); ?>;
+				color: <?php echo esc_attr( get_theme_mod( 'petals_link_colour' ) ); ?>;
 			}
 			
 		    .sticky {
-				border-left: '4px solid <?php echo get_theme_mod( 'petals_link_colour' ); ?>';
+				border-left: '4px solid <?php echo esc_attr( get_theme_mod( 'petals_link_colour' ) ); ?>';
 			}
 			
 			button {
-				background-color: <?php echo get_theme_mod( 'petals_button_bgcolour' ); ?>;
+				background-color: <?php echo esc_attr( get_theme_mod( 'petals_button_bgcolour' ) ); ?>;
 			}
 			
 		</style>
