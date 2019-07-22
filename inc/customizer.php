@@ -435,7 +435,6 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'petals_sanitize_checkbox',
-		'default' => 1,
 	) );
 	
 	$wp_customize->add_control( 'petals_display_block_two', array(
@@ -534,7 +533,6 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'sanitize_callback'  => 'petals_sanitize_checkbox',
-		'default' => 1,
 	) );
 	
 	$wp_customize->add_control( 'petals_display_block_three', array(
