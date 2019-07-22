@@ -111,6 +111,17 @@ if ( ! function_exists( 'petals_entry_footer' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'wp_body_open' ) ) :
+	/**
+	 * Shim for sites older than 5.2.
+	 *
+	 * @link https://core.trac.wordpress.org/ticket/12563
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+endif;
+
 if ( ! function_exists( 'petals_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.

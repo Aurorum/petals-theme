@@ -20,6 +20,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="page" class="site">
 	<header id="masthead" class="site-header">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'petals' ); ?></a>
@@ -41,7 +42,7 @@
 			) );
 			?>
 		</nav>
-		<?php if ( is_front_page() && is_home() ) : ?>
+		<?php if ( is_front_page() ) : ?>
 			<?php the_custom_logo(); ?>
 			<?php
 			$petals_description = get_bloginfo( 'description', 'display' );
@@ -62,12 +63,12 @@
   </g>
 </svg>
 	<?php endif; ?>
-			<h6 class="small-panel-text"> <?php echo get_theme_mod('petals_small_text', __('This can be edited from your Customizer', 'petals') ); ?> </h6>
-			<h1 class="top-panel-text"> <?php echo get_theme_mod('petals_top_text', __('Wildlife & Floral Exhibition', 'petals') ); ?> </h1>
-			<h3 class ="bottom-panel-text"> <?php echo get_theme_mod('petals_bottom_text', __('Members Exclusive', 'petals') ); ?> </h3>
+			<h6 class="small-panel-text"> <?php echo esc_attr( get_theme_mod('petals_small_text', __('This can be edited from your Customizer', 'petals') ) ); ?> </h6>
+			<h1 class="top-panel-text"> <?php echo esc_attr( get_theme_mod('petals_top_text', __('Wildlife & Floral Exhibition', 'petals') ) ); ?> </h1>
+			<h3 class ="bottom-panel-text"> <?php echo esc_attr( get_theme_mod('petals_bottom_text', __('Members Exclusive', 'petals') ) ); ?> </h3>
 			<?php if ( get_theme_mod( 'petals_panel_button' ) == 1 ) : ?> 
-			<a class="panel-button button" href="<?php echo get_theme_mod('petals_panel_buttonlink', __('Enter your own button here', 'petals') ); ?>">
-					<?php echo get_theme_mod('petals_panel_buttontext', __('Enter your own button here', 'petals') ); ?>
+			<a class="panel-button button" href="<?php echo esc_attr( get_theme_mod('petals_panel_buttonlink', __('Enter your own button here', 'petals') ) ); ?>">
+					<?php echo esc_attr( get_theme_mod('petals_panel_buttontext', __('Enter your own button here', 'petals') ) ); ?>
 			</a>
 			<?php endif; ?>
 			</div>
@@ -81,80 +82,82 @@
 	<?php if  ( get_theme_mod( 'petals_display_promotion', 1 ) == 1 )  : ?>
 	<div class="petals-promotion">
 		<?php if ( get_theme_mod( 'petals_promotion_image' ) ) : ?>
-		<div class="promotion-image centrebg" style="background-image: url(<?php echo get_theme_mod('petals_promotion_image'); ?>)">
+		<div class="promotion-image centrebg" style="background-image: url(<?php echo esc_url( get_theme_mod('petals_promotion_image') ); ?>)">
 		<?php endif; ?>
 		<?php if ( ! get_theme_mod( 'petals_promotion_image' ) ) : ?>
-		<div class="promotion-image centrebg" style="background-image: url(<?php echo get_template_directory_uri().'/resources/rain.png' ?>)">
+		<div class="promotion-image centrebg" style="background-image: url(<?php echo esc_url( get_template_directory_uri().'/resources/rain.png' ) ?>) ">
 		<?php endif; ?>
 			<div class="promotion-text">
-			<h1 class="promotion-title"> <?php echo get_theme_mod('petals_promotion_heading', __('Discover what\'s available', 'petals') ); ?> </h1>
-			<h3 class ="promotion-subtitle"> <?php echo get_theme_mod('petals_promotion_subtitle', __('From birds to plants, there\'s a world to explore', 'petals') ); ?> </h3>
+			<h1 class="promotion-title"> <?php echo esc_attr( get_theme_mod('petals_promotion_heading', __('Discover what\'s available', 'petals') ) ); ?> </h1>
+			<h3 class ="promotion-subtitle"> <?php echo esc_attr( get_theme_mod('petals_promotion_subtitle', __('From birds to plants, there\'s a world to explore', 'petals') ) ); ?> </h3>
 					<?php if ( get_theme_mod( 'petals_promotion_button', 1 ) == 1 ) : ?> 
-			<a class="promotion-button panel-button" href="<?php echo get_theme_mod('petals_promotion_button_link', '#' ); ?>">
-					<?php echo get_theme_mod('petals_promotion_button_text', __('Explore now!', 'petals' ) ); ?>
+			<a class="promotion-button panel-button" href="<?php echo esc_url( get_theme_mod('petals_promotion_button_link', '#' ) ); ?>">
+					<?php echo esc_attr( get_theme_mod('petals_promotion_button_text', __('Explore now!', 'petals' ) ) ); ?>
 			</a>
 			<?php endif; ?>
 			</div>
 		</div>
 	</div>
 	<?php endif; ?>
+	<?php if ( ! is_home() ) : ?>
 	<div class="petals-block-wrapper">
 	<?php if ( get_theme_mod( 'petals_display_block_one', 1 ) == 1 ) : ?>
 		<div class="petals-block-one">
 			<?php if ( get_theme_mod( 'petals_block_one_image' ) ) : ?>
-				<img src="<?php echo get_theme_mod('petals_block_one_image'); ?>">
+				<img src="<?php echo esc_url( get_theme_mod('petals_block_one_image') ); ?>">
 			<?php endif; ?>
 			<?php if ( ! get_theme_mod( 'petals_block_one_image' ) ) : ?>
-			<img src="<?php echo get_template_directory_uri().'/resources/mountains.png' ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri().'/resources/mountains.png' ) ?>">
 			<?php endif; ?>
 			<div class="block-one-contents-wrapper">
-				<h2 class ="block-one-heading"> <?php echo get_theme_mod('petals_block_one_heading', __('Edit these in your Customizer', 'petals') ); ?></h2>
-				<p class ="block-one-text"> <?php echo get_theme_mod('petals_block_one_text', __('Create something beautiful that stands out to your readers using three blocks! These can be edited with great ease in your Customizer. See below for some inspiration.', 'petals') ); ?></p>
+				<h2 class ="block-one-heading"> <?php echo esc_attr( get_theme_mod('petals_block_one_heading', __('Edit these in your Customizer', 'petals') ) ); ?></h2>
+				<p class ="block-one-text"> <?php echo esc_attr( get_theme_mod('petals_block_one_text', __('Create something beautiful that stands out to your readers using three blocks! These can be edited with great ease in your Customizer. See below for some inspiration.', 'petals') ) ); ?></p>
 				<?php if ( get_theme_mod( 'petals_block_one_cta', 1 ) ) : ?>
-				<a class="block-one-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_one_cta_link', '#' ); ?>">
-					<?php echo get_theme_mod('petals_block_one_cta_text', __('You can also add your own button!', 'petals' ) ); ?>
+				<a class="block-one-button promotion-button panel-button" href="<?php echo esc_url( get_theme_mod('petals_block_one_cta_link', '#' ) ); ?>">
+					<?php echo esc_attr( get_theme_mod('petals_block_one_cta_text', __('You can also add your own button!', 'petals' ) ) ); ?>
 				</a>
 				<?php endif; ?>
 			</div>
 		</div>
 	<?php endif; ?>
-	<?php if ( get_theme_mod( 'petals_display_block_two', 1 ) == 1 ) : ?>
+	<?php if ( get_theme_mod( 'petals_display_block_two', 0 ) == 1 ) : ?>
 		<div class="petals-block-two">
 			<div class="block-two-contents-wrapper">
-				<h2 class ="block-two-heading"> <?php echo get_theme_mod('petals_block_two_heading', __('Sunsets of a Lifetime', 'petals') ); ?></h2>
-				<p class ="block-two-text"> <?php echo get_theme_mod('petals_block_two_text', __('Each evening, the sun gently lowers itself down for the night, leaving some remarkable sights to enjoy, and offering the chance to take some fantastic pictures. ', 'petals') ); ?></p>
+				<h2 class ="block-two-heading"> <?php echo esc_attr( get_theme_mod('petals_block_two_heading', __('Sunsets of a Lifetime', 'petals') ) ); ?></h2>
+				<p class ="block-two-text"> <?php echo esc_attr( get_theme_mod('petals_block_two_text', __('Each evening, the sun gently lowers itself down for the night, leaving some remarkable sights to enjoy, and offering the chance to take some fantastic pictures. ', 'petals') ) ); ?></p>
 				<?php if ( get_theme_mod( 'petals_block_two_cta', 1 ) == 1 ) : ?> 
-				<a class="block-two-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_two_cta_link', __('Enter your own button here', 'petals' ) ); ?>">
-					<?php echo get_theme_mod('petals_block_two_cta_text', __('Enter your own button here', 'petals' ) ); ?>
+				<a class="block-two-button promotion-button panel-button" href="<?php echo esc_attr( get_theme_mod('petals_block_two_cta_link', __('Enter your own button here', 'petals' ) ) ); ?>">
+					<?php echo esc_attr( get_theme_mod('petals_block_two_cta_text', __('Enter your own button here', 'petals' ) ) ); ?>
 				</a>
 				<?php endif; ?>
 			</div>
 			<?php if ( get_theme_mod( 'petals_block_two_image' ) ) : ?>
-				<img src="<?php echo get_theme_mod('petals_block_two_image'); ?>">
+				<img src="<?php echo esc_url( get_theme_mod('petals_block_two_image') ); ?>">
 			<?php endif; ?>
 			<?php if ( ! get_theme_mod( 'petals_block_two_image' ) ) : ?>
-			<img src="<?php echo get_template_directory_uri().'/resources/sunset.png' ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri().'/resources/sunset.png' ) ?>">
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
-		<?php if ( get_theme_mod( 'petals_display_block_three', 1 ) == 1 ) : ?>
+		<?php if ( get_theme_mod( 'petals_display_block_three', 0 ) == 1 ) : ?>
 		<div class="petals-block-three">
 			<?php if ( get_theme_mod( 'petals_block_three_image' ) ) : ?>
-				<img src="<?php echo get_theme_mod('petals_block_three_image'); ?>">
+				<img src="<?php echo esc_url( get_theme_mod('petals_block_three_image') ); ?>">
 			<?php endif; ?>
 			<?php if ( ! get_theme_mod( 'petals_block_three_image' ) ) : ?>
-			<img src="<?php echo get_template_directory_uri().'/resources/items.png' ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri().'/resources/items.png' ) ?>">
 			<?php endif; ?>
 			<div class="block-three-contents-wrapper">
-				<h2 class ="block-three-heading"> <?php echo get_theme_mod('petals_block_three_heading', __('Shop', 'petals') ); ?></h2>
-				<p class ="block-three-text"> <?php echo get_theme_mod('petals_block_three_text', __('Each tour concludes with a visit to the gift shop, filled with merchandise created by the local villages. Items are unique, hand-crafted and make the perfect gift for all. You can also visit our online store.', 'petals') ); ?></p>
+				<h2 class ="block-three-heading"> <?php echo esc_attr( get_theme_mod('petals_block_three_heading', __('Shop', 'petals') ) ); ?></h2>
+				<p class ="block-three-text"> <?php echo esc_attr( get_theme_mod('petals_block_three_text', __('Each tour concludes with a visit to the gift shop, filled with merchandise created by the local villages. Items are unique, hand-crafted and make the perfect gift for all. You can also visit our online store.', 'petals') ) ); ?></p>
 				<?php if ( get_theme_mod( 'petals_block_three_cta', 1 ) == 1 ) : ?> 
-				<a class="block-three-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_three_cta_link', '#'); ?>">
-					<?php echo get_theme_mod('petals_block_three_cta_text', __('Purchase now!', 'petals' ) ); ?>
+				<a class="block-three-button promotion-button panel-button" href="<?php echo esc_url( get_theme_mod('petals_block_three_cta_link', '#') ) ; ?>">
+					<?php echo esc_attr( get_theme_mod('petals_block_three_cta_text', __('Purchase now!', 'petals' ) ) ); ?>
 				</a>
 				<?php endif; ?>
 			</div>
 		</div>
+	<?php endif; ?>
 	<?php endif; ?>
 	</div>
 	<?php endif; ?>

@@ -4,7 +4,7 @@ Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, 
 Requires at least: 4.5
 Tested up to: 5.1
 Requires PHP: 5.2
-Stable tag: 1.1
+Stable tag: 1.2
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,13 +22,22 @@ Petals is a landing-style theme designed to entice your readers, whilst also bei
 
 = How do I set up my theme? =
 
-Petals has been designed to be easy to set up, and can be done so directly from the Customizer. Pick your own header image and visit the "Theme Options" panel. You can also create a Promotion Panel or create a Block directly from your Customizer to direct your audience to significant parts of your website. If you wish, you can toggle your front-page to something bolder in the Front Page Panel. From there, all you need to do is write your first post. 
+Petals has been designed to be easy to set up, and can be done so directly from the Customizer. Pick your own header image and visit the "Theme Options" panel, from which you can also create a Promotion Panel. If you wish, you can also toggle your front-page to something bolder in the Front Page Panel. In order to utilise "Blocks", which emphasise certain content and provide the ability to link to other content, you'll need to activate a Static Front Page, then visit the Customizer. From there, all that's left to do is to start blogging!
 
 = Does this theme support any plugins? =
 
 Petals includes support for Jetpack's Infinite Scrolling, Social Menu, and Content Options. It is also compatible with all Gutenberg blocks. 
 
 == Changelog ==
+
+= 1.2 - July 22 2019 =
+* Adds alt tags for Featured Images
+* Call the new wp_body_open function
+* Ensure that the Header Text Colour automatically updates in the Customizer when changed, without the need to refresh
+* Prevent a fatal error for users visiting a page with a Featured Image on a site without Jetpack
+* Lots of sanitization and escaping!
+* No longer display Petals Blocks unless using a Static Front Page
+* Limit the number of Petals Blocks automatically displayed to reduce content creation
 
 = 1.1 - July 01 2019 =
 * Add support for Jetpack's Social Menu and Content Options

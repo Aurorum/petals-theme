@@ -31,6 +31,9 @@
 				$( '.site-title, .site-description' ).css( {
 					'visibility': 'visible'
 				} );
+				$( '.site-title a, .site-description, .menu-toggle-icon' ).css( {
+					'color': to
+				} );
 			}
 		} );
 	} );
