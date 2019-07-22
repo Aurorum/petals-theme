@@ -15,6 +15,21 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	
+        function petals_sanitize_checkbox( $checked ){ 
+            return ( ( isset( $checked ) && true == $checked ) ? true : false );
+        }
+	
+	function petals_sanitize_file( $file, $setting ) {
+            $mimes = array(
+                'jpg|jpeg|jpe' => 'image/jpeg',
+                'gif'          => 'image/gif',
+                'png'          => 'image/png'
+            );
+		
+	    $file_ext = wp_check_filetype( $file, $mimes );
+            return ( $file_ext['ext'] ? $file : $setting->default );
+        }
 
 	$wp_customize->add_panel( 'petals_theme_options' , array(
     		'title'      => __( 'Theme Options', 'petals' ),
@@ -23,7 +38,7 @@ function petals_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'petals_link_colour', array(
 		'default' => '#EF6079FF',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'petals_link_colour', array(
@@ -34,7 +49,7 @@ function petals_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'petals_button_bgcolour', array(
 		'default' => '#EF6079FF',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'petals_button_bgcolour', array(
@@ -52,13 +67,13 @@ function petals_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'petals_panel_colour', array(
 		'default' => '#fff',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_setting( 'petals_panel_header', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'petals_sanitize_checkbox',
 	) );
 	
 	$wp_customize->add_control( 'petals_panel_header', array(
@@ -122,7 +137,7 @@ function petals_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( 'petals_blob', array(
   			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
-			'sanitize_callback'  => 'esc_attr',
+			'sanitize_callback'  => 'petals_sanitize_checkbox',
 		) );
 	
 		$wp_customize->add_control( 'petals_blob', array(
@@ -136,7 +151,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_panel_button', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'petals_sanitize_checkbox',
 	) );
 	
 	$wp_customize->add_control( 'petals_panel_button', array(
@@ -149,7 +164,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_panel_buttontext', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 	) );
 	
 	$wp_customize->add_control( 'petals_panel_buttontext', array(
@@ -162,7 +177,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_panel_buttonlink', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'esc_url_raw',
 	) );
 	
 	$wp_customize->add_control( 'petals_panel_buttonlink', array(
@@ -175,7 +190,7 @@ function petals_customize_register( $wp_customize ) {
 	if ( get_theme_mod( 'petals_panel_header' ) == 0 ) {
 		$wp_customize->add_setting( 'petals_blob_colour', array(
 			'default' => '#EF6079FF',
-			'sanitize_callback'  => 'esc_attr',
+			'sanitize_callback'  => 'petals_sanitize_checkbox',
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'petals_blob_colour', array(
@@ -187,7 +202,7 @@ function petals_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'petals_button_colour', array(
 		'default' => '#c74359',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'petals_button_colour', array(
@@ -205,7 +220,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_display_promotion', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'petals_sanitize_checkbox',
 		'default' => 1,
 	) );
 	
@@ -221,7 +236,7 @@ function petals_customize_register( $wp_customize ) {
        	 	'transport'     => 'refresh',
        	 	'height'        => 180,
       	 	'width'        => 160,
-	 	'sanitize_callback'  => 'esc_attr',
+	 	'sanitize_callback'  => 'petals_sanitize_file',
 	 	'default' => get_template_directory_uri().'/resources/rain.png',
   	 ));
 	
@@ -234,7 +249,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_promotion_heading', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( "Discover what's available", 'petals' )
 	) );
 	
@@ -247,7 +262,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_promotion_subtitle', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( "From birds to plants, there's a world to explore", 'petals' )
 	) );
 	
@@ -261,7 +276,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'default' => 1,
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'petals_sanitize_checkbox',
 	) );
 	
 	$wp_customize->add_control( 'petals_promotion_button', array(
@@ -273,7 +288,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_promotion_button_text', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( 'Explore now!', 'petals' ),
 	) );
 	
@@ -286,7 +301,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_promotion_button_link', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'esc_url_raw',
 		'default' => '#',
 	) );
 	
@@ -301,7 +316,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'default'  => '20',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'absint',
 	) );
 	
 	$wp_customize->add_control( 'petals_promotion_spacing', array(
@@ -320,7 +335,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_display_block_one', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'petals_sanitize_checkbox',
 		'default' => 1,
 	) );
 	
@@ -335,7 +350,7 @@ function petals_customize_register( $wp_customize ) {
      	   	'transport'     => 'refresh',
      	   	'height'        => 400,
      	   	'width'        => 600,
-	   	'sanitize_callback'  => 'esc_attr',
+	   	'sanitize_callback'  => 'petals_sanitize_file',
 		'default' => get_template_directory_uri().'/resources/mountains.png',
   	 ));
 	
@@ -348,7 +363,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_one_heading', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( 'Edit these in your Customizer', 'petals' )
 	) );
 	
@@ -361,7 +376,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_one_text', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( 'Create something beautiful that stands out to your readers using three blocks! These can be edited with great ease in your Customizer. See below for some inspiration', 'petals' ) 
 	) );
 	
@@ -375,7 +390,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'default' => 1,
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'petals_sanitize_checkbox',
 	) );
 	
 	$wp_customize->add_control( 'petals_block_one_cta', array(
@@ -387,7 +402,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_one_cta_text', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( 'You can also add your own button!', 'petals' ) 
 	) );
 	
@@ -400,7 +415,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_one_cta_link', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'esc_url_raw',
 		'default' => '#',
 	) );
 	
@@ -419,7 +434,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_display_block_two', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'petals_sanitize_checkbox',
 		'default' => 1,
 	) );
 	
@@ -434,7 +449,7 @@ function petals_customize_register( $wp_customize ) {
      	   	'transport'     => 'refresh',
      	   	'height'        => 400,
      	   	'width'        => 600,
-	   	'sanitize_callback'  => 'esc_attr',
+	   	'sanitize_callback'  => 'petals_sanitize_file',
 		 'default' => get_template_directory_uri().'/resources/sunset.png',
   	 ));
 	
@@ -447,7 +462,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_two_heading', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( 'Sunsets of a Lifetime', 'petals' ),
 	) );
 	
@@ -460,7 +475,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_two_text', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( 'Each evening, the sun gently lowers itself down for the night, leaving some remarkable sights to enjoy.', 'petals' ),
 	) );
 	
@@ -474,7 +489,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'default' => 1,
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'petals_sanitize_checkbox',
 	) );
 	
 	$wp_customize->add_control( 'petals_block_two_cta', array(
@@ -486,7 +501,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_two_cta_text', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( 'Enter your own button here', 'petals' ),
 	) );
 	
@@ -499,7 +514,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_two_cta_link', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'esc_url_raw',
 		'default' => '#',
 	) );
 	
@@ -518,7 +533,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_display_block_three', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'petals_sanitize_checkbox',
 		'default' => 1,
 	) );
 	
@@ -533,7 +548,7 @@ function petals_customize_register( $wp_customize ) {
      	   	'transport'     => 'refresh',
      	   	'height'        => 400,
      	   	'width'        => 600,
-	   	'sanitize_callback'  => 'esc_attr',
+	   	'sanitize_callback'  => 'petals_sanitize_file',
 		'default' => get_template_directory_uri().'/resources/items.png',
   	 ));
 	
@@ -546,7 +561,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_three_heading', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( 'Shop', 'petals' ),
 	) );
 	
@@ -559,7 +574,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_three_text', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( 'Each tour concludes with a visit to the gift shop, filled with merchandise created by the local villages. Items are unique, hand-crafted and make the perfect gift for all. You can also visit our online store.', 'petals' ),
 	) );
 	
@@ -573,7 +588,7 @@ function petals_customize_register( $wp_customize ) {
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		'default' => 1,
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'petals_sanitize_checkbox',
 	) );
 	
 	$wp_customize->add_control( 'petals_block_three_cta', array(
@@ -585,7 +600,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_three_cta_text', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'sanitize_text_field',
 		'default' => __( 'Purchase now!', 'petals' ),
 	) );
 	
@@ -598,7 +613,7 @@ function petals_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'petals_block_three_cta_link', array(
   		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
-		'sanitize_callback'  => 'esc_attr',
+		'sanitize_callback'  => 'esc_url_raw',
 		'default' => '#',
 	) );
 	
