@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-	<div class="post-thumbnail centrebg" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+	<div alt="<?php echo esc_attr( __('Featured Image', 'petals') ) ?>" class="post-thumbnail centrebg" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
 	</div>
 
 	<div id="primary" class="content-area">
