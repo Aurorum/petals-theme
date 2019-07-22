@@ -123,36 +123,36 @@
 	<?php if ( get_theme_mod( 'petals_display_block_two', 0 ) == 1 ) : ?>
 		<div class="petals-block-two">
 			<div class="block-two-contents-wrapper">
-				<h2 class ="block-two-heading"> <?php echo get_theme_mod('petals_block_two_heading', __('Sunsets of a Lifetime', 'petals') ); ?></h2>
-				<p class ="block-two-text"> <?php echo get_theme_mod('petals_block_two_text', __('Each evening, the sun gently lowers itself down for the night, leaving some remarkable sights to enjoy, and offering the chance to take some fantastic pictures. ', 'petals') ); ?></p>
+				<h2 class ="block-two-heading"> <?php echo esc_attr( get_theme_mod('petals_block_two_heading', __('Sunsets of a Lifetime', 'petals') ) ); ?></h2>
+				<p class ="block-two-text"> <?php echo esc_attr( get_theme_mod('petals_block_two_text', __('Each evening, the sun gently lowers itself down for the night, leaving some remarkable sights to enjoy, and offering the chance to take some fantastic pictures. ', 'petals') ) ); ?></p>
 				<?php if ( get_theme_mod( 'petals_block_two_cta', 1 ) == 1 ) : ?> 
-				<a class="block-two-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_two_cta_link', __('Enter your own button here', 'petals' ) ); ?>">
-					<?php echo get_theme_mod('petals_block_two_cta_text', __('Enter your own button here', 'petals' ) ); ?>
+				<a class="block-two-button promotion-button panel-button" href="<?php echo esc_attr( get_theme_mod('petals_block_two_cta_link', __('Enter your own button here', 'petals' ) ) ); ?>">
+					<?php echo esc_attr( get_theme_mod('petals_block_two_cta_text', __('Enter your own button here', 'petals' ) ) ); ?>
 				</a>
 				<?php endif; ?>
 			</div>
 			<?php if ( get_theme_mod( 'petals_block_two_image' ) ) : ?>
-				<img src="<?php echo get_theme_mod('petals_block_two_image'); ?>">
+				<img src="<?php echo esc_url( get_theme_mod('petals_block_two_image') ); ?>">
 			<?php endif; ?>
 			<?php if ( ! get_theme_mod( 'petals_block_two_image' ) ) : ?>
-			<img src="<?php echo get_template_directory_uri().'/resources/sunset.png' ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri().'/resources/sunset.png' ) ?>">
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
 		<?php if ( get_theme_mod( 'petals_display_block_three', 0 ) == 1 ) : ?>
 		<div class="petals-block-three">
 			<?php if ( get_theme_mod( 'petals_block_three_image' ) ) : ?>
-				<img src="<?php echo get_theme_mod('petals_block_three_image'); ?>">
+				<img src="<?php echo esc_url( get_theme_mod('petals_block_three_image') ); ?>">
 			<?php endif; ?>
 			<?php if ( ! get_theme_mod( 'petals_block_three_image' ) ) : ?>
-			<img src="<?php echo get_template_directory_uri().'/resources/items.png' ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri().'/resources/items.png' ) ?>">
 			<?php endif; ?>
 			<div class="block-three-contents-wrapper">
-				<h2 class ="block-three-heading"> <?php echo get_theme_mod('petals_block_three_heading', __('Shop', 'petals') ); ?></h2>
-				<p class ="block-three-text"> <?php echo get_theme_mod('petals_block_three_text', __('Each tour concludes with a visit to the gift shop, filled with merchandise created by the local villages. Items are unique, hand-crafted and make the perfect gift for all. You can also visit our online store.', 'petals') ); ?></p>
+				<h2 class ="block-three-heading"> <?php echo esc_attr( get_theme_mod('petals_block_three_heading', __('Shop', 'petals') ) ); ?></h2>
+				<p class ="block-three-text"> <?php echo esc_attr( get_theme_mod('petals_block_three_text', __('Each tour concludes with a visit to the gift shop, filled with merchandise created by the local villages. Items are unique, hand-crafted and make the perfect gift for all. You can also visit our online store.', 'petals') ) ); ?></p>
 				<?php if ( get_theme_mod( 'petals_block_three_cta', 1 ) == 1 ) : ?> 
-				<a class="block-three-button promotion-button panel-button" href="<?php echo get_theme_mod('petals_block_three_cta_link', '#'); ?>">
-					<?php echo get_theme_mod('petals_block_three_cta_text', __('Purchase now!', 'petals' ) ); ?>
+				<a class="block-three-button promotion-button panel-button" href="<?php echo esc_url( get_theme_mod('petals_block_three_cta_link', '#') ) ; ?>">
+					<?php echo esc_attr( get_theme_mod('petals_block_three_cta_text', __('Purchase now!', 'petals' ) ) ); ?>
 				</a>
 				<?php endif; ?>
 			</div>
