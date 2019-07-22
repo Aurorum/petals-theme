@@ -42,7 +42,7 @@
 			) );
 			?>
 		</nav>
-		<?php if ( is_front_page() && is_home() ) : ?>
+		<?php if ( is_front_page() ) : ?>
 			<?php the_custom_logo(); ?>
 			<?php
 			$petals_description = get_bloginfo( 'description', 'display' );
@@ -99,6 +99,7 @@
 		</div>
 	</div>
 	<?php endif; ?>
+	<?php if ( ! is_home() ) : ?>
 	<div class="petals-block-wrapper">
 	<?php if ( get_theme_mod( 'petals_display_block_one', 1 ) == 1 ) : ?>
 		<div class="petals-block-one">
@@ -119,7 +120,7 @@
 			</div>
 		</div>
 	<?php endif; ?>
-	<?php if ( get_theme_mod( 'petals_display_block_two', 1 ) == 1 ) : ?>
+	<?php if ( get_theme_mod( 'petals_display_block_two', 0 ) == 1 ) : ?>
 		<div class="petals-block-two">
 			<div class="block-two-contents-wrapper">
 				<h2 class ="block-two-heading"> <?php echo get_theme_mod('petals_block_two_heading', __('Sunsets of a Lifetime', 'petals') ); ?></h2>
@@ -138,7 +139,7 @@
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
-		<?php if ( get_theme_mod( 'petals_display_block_three', 1 ) == 1 ) : ?>
+		<?php if ( get_theme_mod( 'petals_display_block_three', 0 ) == 1 ) : ?>
 		<div class="petals-block-three">
 			<?php if ( get_theme_mod( 'petals_block_three_image' ) ) : ?>
 				<img src="<?php echo get_theme_mod('petals_block_three_image'); ?>">
@@ -156,6 +157,7 @@
 				<?php endif; ?>
 			</div>
 		</div>
+	<?php endif; ?>
 	<?php endif; ?>
 	</div>
 	<?php endif; ?>
