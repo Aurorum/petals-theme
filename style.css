@@ -3,7 +3,7 @@ Theme Name: Petals
 Theme URI: https://github.com/Aurorum/petals-theme
 Author: Aurorum
 Description: Petals is a landing-style theme designed to entice your readers, whilst also being simple to set up in the Customizer. Allowing your site to make a bold impact with a variety of options including a different header design, Petals empowers your website with options to enhance your dream. 
-Version: 1.2
+Version: 1.3
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: petals
@@ -642,6 +642,11 @@ a:hover, a:active {
 	outline: 0;
 }
 
+p.has-text-color a {
+	/* Ideally, this would be in core. Core PR: #17006 */
+	text-decoration: underline;
+}
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -1205,6 +1210,7 @@ article {
 .no-sidebar .content-area {
 	margin-right: 90px;
 	max-width: none;
+	width: auto;
 }
 
 .page .main-navigation {
@@ -1461,7 +1467,8 @@ object {
 	}
 	
 	.widget-area,
-	.content-area {
+	.content-area,
+	.no-sidebar .content-area {
 		margin-right: 20px;
 		margin-left: 20px;
 		max-width: calc(100% - 40px);
