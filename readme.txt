@@ -35,6 +35,7 @@ Petals includes support for Jetpack's Infinite Scrolling, Social Menu, and Conte
 * Removes content created in the Customizer when beyond page one using Pagination, whilst fixing it from not appearing
 * Prevents the site title overlapping with the mobile menu icon
 * Resolves an issue with the CTA button linking to a page by default
+* Improve clarity of Theme Options' location in the Customizer by increasing priority and changing colours
 
 = 1.2 - July 22 2019 =
 * Adds alt tags for Featured Images
