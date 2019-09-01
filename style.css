@@ -1213,6 +1213,10 @@ article {
 	width: auto;
 }
 
+.paged.no-sidebar .content-area {
+	margin-left: 50px;
+}
+
 .page .main-navigation {
 	background-color: rgba(255, 255, 255, 0.75);
 }
@@ -1468,7 +1472,8 @@ object {
 	
 	.widget-area,
 	.content-area,
-	.no-sidebar .content-area {
+	.no-sidebar .content-area,
+	.paged.no-sidebar .content-area {
 		margin-right: 20px;
 		margin-left: 20px;
 		max-width: calc(100% - 40px);
@@ -1510,6 +1515,7 @@ object {
 	
 	.site-branding h1 {
 		margin-left: 0;
+		max-width: 95%;
 	}
 	
 	.custom-header {
