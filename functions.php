@@ -164,7 +164,7 @@ function petals_custom_colours() {
 				color: <?php echo esc_attr( get_theme_mod( 'petals_link_colour' ) ); ?>;
 			}
 			
-		    .sticky {
+		    	.sticky {
 				border-left: '4px solid <?php echo esc_attr( get_theme_mod( 'petals_link_colour' ) ); ?>';
 			}
 			
@@ -194,6 +194,30 @@ function petals_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'petals_scripts' );
+
+/**
+ * Enqueue Customizer styling.
+ */
+function petals_customizer_styling() { ?>
+	<style>
+		#accordion-panel-petals_theme_options .accordion-section-title:after,
+		#accordion-panel-petals_theme_options .accordion-section-title:focus,
+		#customize-controls #accordion-panel-petals_theme_options.control-section:hover>.accordion-section-title,
+		#sub-accordion-panel-petals_theme_options .accordion-section-title:after,
+		#sub-accordion-panel-petals_theme_options .control-section:hover>.accordion-section-title,
+		#sub-accordion-panel-petals_theme_options .control-section>.accordion-section-title:focus {
+			color: #EF6079FF !important;
+			border-left-color: #EF6079FF !important;
+		}
+		
+		#customize-theme-controls #accordion-panel-petals_theme_options.control-section .accordion-section-title:hover:after,
+		#sub-accordion-panel-petals_theme_options .accordion-section-title:hover:after {
+			color: #f5002b !important;
+		}
+	</style>
+	<?php
+}
+add_action( 'customize_controls_print_styles', 'petals_customizer_styling', 999 );
 
 /**
  * Implement the Custom Header feature.
