@@ -30,6 +30,12 @@ Petals includes support for Jetpack's Infinite Scrolling, Social Menu, and Conte
 
 == Changelog ==
 
+= 1.3 - Sep 01 2019 =
+* Fixes an issue for content boxes overflowing when lacking a sidebar 
+* Removes content created in the Customizer when beyond page one using Pagination
+* Prevents the site title overlapping with the mobile menu icon
+* Resolves an issue with the CTA button linking to a page by default
+
 = 1.2 - July 22 2019 =
 * Adds alt tags for Featured Images
 * Call the new wp_body_open function
