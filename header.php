@@ -105,7 +105,7 @@ wp_nav_menu(array('theme_location' => 'menu-1', 'menu_id' => 'primary-menu',));
 	</div>
 	<?php
     endif; ?>
-	<?php if (!is_home() && !is_paged()): ?>
+	<?php if (is_home() && !is_paged()): ?>
 	<div class="petals-block-wrapper">
 	<?php if (get_theme_mod('petals_display_block_one', 1) == 1): ?>
 		<div class="petals-block-one">
