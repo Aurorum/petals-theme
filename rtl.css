@@ -22,8 +22,7 @@ body {
 	float: right;
 }
 
-.widget-area,
-.menu {
+.widget-area {
 	float: left;
 }
 

@@ -33,7 +33,7 @@ function petals_customize_register( $wp_customize ) {
 
 	$wp_customize->add_panel( 'petals_theme_options' , array(
     		'title'      => __( 'Theme Options', 'petals' ),
-    		'priority'   => 30,
+    		'priority'   => 1,
 	) );
 	
 	$wp_customize->add_setting( 'petals_link_colour', array(
